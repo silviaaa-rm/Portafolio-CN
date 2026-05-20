@@ -477,6 +477,16 @@ section{padding:80px 5%}
   letter-spacing:-.03em;
 }
 
+/* Permite que toda la tarjeta siga siendo clickeable */
+.ev-thumb iframe,
+.ev-thumb img,
+.file-preview,
+.file-preview-wrap,
+.mobile-pdf-card,
+.file-fallback{
+  pointer-events:none;
+}
+
 #objetivos{background:var(--cream)}
 .obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .obj-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:transform .2s,box-shadow .2s}
@@ -1873,6 +1883,8 @@ function buildCards(){
 
       card.className = 'ev-card';
       card.id = `card-u${u}-a${i}`;
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
 
       card.innerHTML = `
         <div class="ev-thumb" style="background:linear-gradient(135deg,${col.bg} 0%,#f5e0f0 100%)">
@@ -1888,7 +1900,10 @@ function buildCards(){
           </div>
 
           <div class="ev-title">${act.name}</div>
-          <div class="ev-desc">${act.desc}</div>
+
+          <div class="ev-desc">
+            ${act.desc}
+          </div>
 
           <div class="ev-learned">
             <div class="ev-ll">¿Qué aprendí?</div>
@@ -1897,7 +1912,17 @@ function buildCards(){
         </div>
       `;
 
-      card.onclick = () => openModal(u, i);
+      card.addEventListener('click', () => {
+        openModal(u, i);
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openModal(u, i);
+        }
+      });
+
       grid.appendChild(card);
     });
   }
