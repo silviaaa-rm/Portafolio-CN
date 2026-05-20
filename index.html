@@ -136,6 +136,51 @@ section{padding:80px 5%}
 .sdesc{color:var(--text-mid);max-width:560px;margin-bottom:44px;font-size:.9rem}
 .divider{width:44px;height:3px;background:var(--rose-mid);border-radius:2px;margin:14px 0 30px}
 
+/* IMAGEN */
+.intro-grid-img{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:52px;
+  align-items:center;
+}
+
+.intro-image-card{
+  width:100%;
+  min-height:360px;
+  background:linear-gradient(135deg,var(--rose),var(--lilac));
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  box-shadow:0 18px 50px rgba(138,48,86,.12);
+  overflow:hidden;
+}
+
+.intro-image-card img{
+  width:100%;
+  height:100%;
+  max-height:320px;
+  object-fit:contain;
+}
+
+@media(max-width:800px){
+  .intro-grid-img{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .intro-image-card{
+    min-height:240px;
+    padding:20px;
+  }
+
+  .intro-image-card img{
+    max-height:220px;
+  }
+}
+
 /* INTRO */
 #introduccion{background:var(--white)}
 .intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:52px;align-items:start}
@@ -275,7 +320,7 @@ footer span{color:var(--white)}
 <body>
 
 <nav>
-  <a class="nav-logo" href="#inicio">✦ Portafolio</a>
+  <a class="nav-logo" href="#inicio">Portafolio - SGRM</a>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#inicio">Inicio</a></li>
@@ -327,6 +372,14 @@ footer span{color:var(--white)}
             <span class="ic-emoji">📘</span>
             <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
           </label>
+          <div style="flex:1"><div class="ic-label">Carrera</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Ingenieria en Sistemas Computacionales</div></div>
+        </div>
+        <div class="info-card">
+          <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
+            <img src="" alt="Icono de materia" class="ic-img">
+            <span class="ic-emoji">📘</span>
+            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
+          </label>
           <div style="flex:1"><div class="ic-label">Asignatura</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Cómputo en la Nube</div></div>
         </div>
       </div>
@@ -349,16 +402,43 @@ footer span{color:var(--white)}
     <div class="stag">Presentación</div>
     <h2 class="stitle">Introducción</h2>
     <div class="divider"></div>
-    <div class="intro-grid">
-      <div class="intro-quote">El aprendizaje es un proceso de descubrimiento constante, donde cada evidencia es un peldaño hacia la excelencia académica.</div>
+
+    <div class="intro-grid intro-grid-img">
       <div class="intro-text">
-        <p>Este portafolio representa un viaje intelectual a través del curso, capturando no solo los resultados finales, sino también el proceso de pensamiento, las dificultades superadas y las reflexiones críticas que han dado forma a mi aprendizaje.</p>
-        <p>A lo largo de las siguientes secciones, se presentan evidencias cuidadosamente seleccionadas que demuestran el cumplimiento de las competencias establecidas. Cada entrada conecta la teoría con la práctica, permitiendo una visión integral del desarrollo profesional y personal alcanzado durante este período.</p>
+        <p>
+          Este portafolio de evidencias corresponde a la asignatura <strong>Cómputo en la Nube</strong>, 
+          perteneciente a la especialidad de <strong>Tecnologías Inteligentes</strong>. En él se plasma lo 
+          aprendido a lo largo del semestre, así como la evolución de las actividades realizadas, los 
+          conocimientos adquiridos y el desarrollo de competencias relacionadas con el uso de servicios, 
+          herramientas y modelos de trabajo en la nube.
+        </p>
+
+        <p>
+          El cómputo en la nube es un modelo tecnológico que permite acceder a recursos informáticos, como 
+          almacenamiento, procesamiento, redes y aplicaciones, a través de internet, de manera flexible y bajo 
+          demanda. En este sentido, este portafolio reúne evidencias que reflejan tanto la comprensión teórica 
+          de los temas abordados como su aplicación práctica, mostrando el proceso de aprendizaje, el 
+          fortalecimiento de habilidades y el avance académico logrado durante el curso.
+        </p>
+
         <div class="intro-stats">
-          <div class="istat"><div class="istat-n">5</div><div class="istat-l">Unidades</div></div>
-          <div class="istat"><div class="istat-n">29</div><div class="istat-l">Actividades</div></div>
-          <div class="istat"><div class="istat-n">✓</div><div class="istat-l">Completado</div></div>
+          <div class="istat">
+            <div class="istat-n">5</div>
+            <div class="istat-l">Unidades</div>
+          </div>
+          <div class="istat">
+            <div class="istat-n">29</div>
+            <div class="istat-l">Actividades</div>
+          </div>
+          <div class="istat">
+            <div class="istat-n">✓</div>
+            <div class="istat-l">Completado</div>
+          </div>
         </div>
+      </div>
+
+      <div class="intro-image-card">
+        <img src="assets/img/cloud-computing.png" alt="Imagen de cómputo en la nube">
       </div>
     </div>
   </div>
@@ -492,7 +572,7 @@ footer span{color:var(--white)}
   </div>
 </section>
 
-<footer><p>© 2024 Portafolio de Evidencias · Hecho con <span>💗 dedicación</span></p></footer>
+<footer><p>© 2024 Portafolio de Evidencias · Silvia Guadalupe Ramos Mendoza</span></p></footer>
 
 <!-- MODAL -->
 <div class="modal-bg" id="modal" onclick="closeBg(event)">
