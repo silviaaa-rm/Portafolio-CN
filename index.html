@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio de Evidencias</title>
+
+<title>Portafolio de Evidencias - Silvia Ramos</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80">☁️</text></svg>'>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -82,7 +85,85 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);backgrou
 .sem-bar .lbl{font-size:.72rem;color:var(--text-mid);font-weight:500}
 .sem-bar .val{font-weight:600;font-size:.92rem}
 @media(max-width:800px){.hero-inner{grid-template-columns:1fr;gap:36px;padding-bottom:40px}.hero-vis{order:-1}}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:56px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+  max-width:1100px;
+  margin:0 auto;
+  width:100%;
+  padding:0 5%;
+}
 
+.logos-box{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  align-items:center;
+  justify-content:center;
+}
+
+.school-logo-card{
+  width:100%;
+  max-width:430px;
+  height:190px;
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--border);
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  box-shadow:0 18px 50px rgba(138,48,86,.14);
+}
+
+.school-logo-card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.logo-tecnm img{
+  max-width:330px;
+  max-height:115px;
+}
+
+.logo-saltillo img{
+  max-width:185px;
+  max-height:140px;
+}
+
+@media(max-width:800px){
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:34px;
+    padding-bottom:40px;
+  }
+
+  .logos-box{
+    order:-1;
+    gap:18px;
+  }
+
+  .school-logo-card{
+    max-width:100%;
+    height:145px;
+    padding:22px;
+  }
+
+  .logo-tecnm img{
+    max-width:260px;
+    max-height:90px;
+  }
+
+  .logo-saltillo img{
+    max-width:135px;
+    max-height:105px;
+  }
+}
 
 /* BOX */
 .logos-box{
@@ -290,16 +371,96 @@ section{padding:80px 5%}
 }
 
 /* INTRO */
-#introduccion{background:var(--white)}
-.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:52px;align-items:start}
-.intro-quote{background:linear-gradient(135deg,var(--rose),var(--lilac));border-radius:var(--r);padding:28px;font-family:'Montserrat',sans-serif;font-style:italic;font-size:1rem;line-height:1.65;color:var(--rose-deep);position:relative}
-.intro-quote::before{content:'"';font-size:4rem;line-height:1;color:var(--rose-dark);opacity:.4;display:block;margin-bottom:-16px}
-.intro-text p{color:var(--text-mid);margin-bottom:14px;font-size:.9rem}
-.intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:36px}
-.istat{background:var(--cream);padding:26px 18px;text-align:center}
-.istat-n{font-family:'Montserrat',sans-serif;font-size:1.9rem;color:var(--rose-dark)}
-.istat-l{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);margin-top:4px}
-@media(max-width:800px){.intro-grid{grid-template-columns:1fr;gap:28px}.intro-stats{grid-template-columns:repeat(3,1fr)}}
+#introduccion{
+  background:var(--white);
+}
+
+.intro-grid-img{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:52px;
+  align-items:center;
+}
+
+.intro-text p{
+  color:var(--text-mid);
+  margin-bottom:16px;
+  font-size:.92rem;
+  line-height:1.8;
+}
+
+.intro-image-card{
+  width:100%;
+  min-height:360px;
+  background:linear-gradient(135deg,var(--rose),var(--lilac));
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:26px;
+  box-shadow:0 18px 50px rgba(138,48,86,.12);
+  overflow:hidden;
+}
+
+.intro-image-card img{
+  width:100%;
+  height:100%;
+  max-height:320px;
+  object-fit:contain;
+}
+
+.intro-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  margin-top:36px;
+}
+
+.istat{
+  background:var(--cream);
+  padding:26px 18px;
+  text-align:center;
+}
+
+.istat-n{
+  font-size:1.9rem;
+  font-weight:800;
+  color:var(--rose-dark);
+}
+
+.istat-l{
+  font-size:.62rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--text-light);
+  margin-top:4px;
+}
+
+@media(max-width:800px){
+  .intro-grid-img{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .intro-image-card{
+    min-height:240px;
+    padding:20px;
+  }
+
+  .intro-image-card img{
+    max-height:220px;
+  }
+
+  .intro-stats{
+    grid-template-columns:1fr;
+  }
+}
 
 /* OBJETIVOS */
 .obj-number{
@@ -510,6 +671,77 @@ section{padding:80px 5%}
   color:var(--rose-dark);
 }
 
+/* INDICE */
+#indice{
+  background:var(--white);
+  padding:80px 5%;
+}
+
+.index-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1100px;
+  width:100%;
+}
+
+.index-card{
+  background:var(--cream);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:24px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  text-decoration:none;
+  box-shadow:0 12px 35px rgba(194,84,122,.08);
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.index-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(194,84,122,.16);
+  border-color:var(--rose-mid);
+}
+
+.index-number{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  background:var(--rose);
+  color:var(--rose-deep);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  flex-shrink:0;
+}
+
+.index-card h3{
+  font-size:1rem;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:6px;
+}
+
+.index-card p{
+  font-size:.84rem;
+  color:var(--text-mid);
+  line-height:1.5;
+}
+
+@media(max-width:900px){
+  .index-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .index-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 /* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;z-index:1000;background:rgba(42,26,46,.72);align-items:center;justify-content:center;padding:16px}
 .modal-bg.open{display:flex}
@@ -569,6 +801,30 @@ section{padding:80px 5%}
 .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
 .tag{padding:4px 12px;border-radius:100px;font-size:.72rem;font-weight:500;background:var(--rose);color:var(--rose-deep)}
 @media(max-width:800px){.concl-grid{grid-template-columns:1fr}}
+.conclusion-text{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:34px;
+  box-shadow:0 14px 40px rgba(194,84,122,.10);
+  max-width:950px;
+}
+
+.conclusion-text p{
+  color:var(--text-mid);
+  font-size:.92rem;
+  line-height:1.8;
+  margin-bottom:16px;
+}
+
+.conclusion-text p:last-child{
+  margin-bottom:0;
+}
+
+.conclusion-text strong{
+  color:var(--rose-deep);
+  font-weight:800;
+}
 
 /* ABOUT */
 #acerca{background:var(--white)}
@@ -588,6 +844,122 @@ section{padding:80px 5%}
 .btn-o{border-color:var(--border);background:var(--white);color:var(--text)}.btn-o:hover{border-color:var(--rose-mid);background:var(--rose)}
 @media(max-width:800px){.about-grid{grid-template-columns:1fr}.about-photo{width:130px;height:130px;font-size:2.8rem}}
 
+/* ABOUT */
+#acerca{
+  background:var(--white);
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:44px;
+  align-items:start;
+}
+
+.about-photo{
+  width:240px;
+  height:240px;
+  border-radius:var(--r);
+  background:linear-gradient(135deg,var(--rose),var(--lilac));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:3px solid var(--border);
+  box-shadow:0 14px 40px rgba(194,84,122,.12);
+}
+
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.about-photo-text{
+  font-size:.72rem;
+  color:var(--text-light);
+  text-align:center;
+  margin-top:10px;
+  font-weight:600;
+}
+
+.about-info-card{
+  background:var(--cream);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:30px;
+  box-shadow:0 14px 40px rgba(194,84,122,.08);
+}
+
+.about-name{
+  font-size:1.35rem;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:22px;
+}
+
+.about-data-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.about-data-item{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+}
+
+.about-data-item span,
+.about-objective span{
+  display:block;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-light);
+  margin-bottom:5px;
+}
+
+.about-data-item p{
+  font-size:.9rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.4;
+}
+
+.about-objective{
+  margin-top:16px;
+  background:linear-gradient(135deg,var(--rose),var(--lilac));
+  border-radius:14px;
+  padding:18px 20px;
+  border-left:4px solid var(--rose-dark);
+}
+
+.about-objective p{
+  color:var(--text);
+  font-size:.9rem;
+  line-height:1.7;
+  font-weight:500;
+}
+
+@media(max-width:800px){
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .about-photo{
+    width:180px;
+    height:180px;
+  }
+
+  .about-data-list{
+    grid-template-columns:1fr;
+  }
+}
+
 /* FOOTER */
 footer{background:var(--rose-deep);color:rgba(255,255,255,.65);padding:26px 5%;text-align:center;font-size:.78rem}
 footer span{color:var(--white)}
@@ -600,6 +972,7 @@ footer span{color:var(--white)}
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#indice">Índice</a></li>
     <li><a href="#introduccion">Introducción</a></li>
     <li><a href="#objetivos">Objetivos</a></li>
     <li><a href="#unidades">Unidades</a></li>
@@ -611,63 +984,125 @@ footer span{color:var(--white)}
 
 <!-- HERO -->
 <section id="inicio">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
   <div class="hero-inner">
-    <div>
+    <div class="hero-info">
       <div class="hero-badge">TecNM - Campus Saltillo</div>
-      <h1 class="hero-title">Portafolio de Evidencias<br><em>Cómputo en la Nube</em></h1>
-      <p class="hero-sub">Recopilación de evidencias y avances académicos de la asignatura.</p>
+
+      <h1 class="hero-title">
+        Portafolio de Evidencias<br>
+        <em>Cómputo en la Nube</em>
+      </h1>
+
+      <p class="hero-sub">
+        Recopilación de evidencias y avances académicos de la asignatura.
+      </p>
+
       <div class="info-cards">
         <div class="info-card">
-          <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
-            <img src="" alt="Icono de estudiante" class="ic-img">
-            <span class="ic-emoji">🎓</span>
-            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
-          </label>
-          <div style="flex:1"><div class="ic-label">Estudiante</div><div class="ic-val" contenteditable="true" data-ph="Tu nombre aquí">Silvia Guadalupe Ramos Mendoza</div></div>
+          <div class="ic-icon" style="background:var(--rose)">🎓</div>
+          <div style="flex:1">
+            <div class="ic-label">Estudiante</div>
+            <div class="ic-val">Silvia Guadalupe Ramos Mendoza</div>
+          </div>
         </div>
+
         <div class="info-card">
-          <label class="ic-icon" style="background:var(--lilac)" title="Clic para cambiar imagen">
-            <img src="" alt="Icono de docente" class="ic-img">
-            <span class="ic-emoji">👩‍🏫</span>
-            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
-          </label>
-          <div style="flex:1"><div class="ic-label">Docente</div><div class="ic-val" contenteditable="true" data-ph="Nombre del docente">Ing. Miguel Salazar del Bosque</div></div>
+          <div class="ic-icon" style="background:var(--lilac)">👩‍🏫</div>
+          <div style="flex:1">
+            <div class="ic-label">Docente</div>
+            <div class="ic-val">Ing. Miguel Salazar del Bosque</div>
+          </div>
         </div>
+
         <div class="info-card">
-          <label class="ic-icon" style="background:var(--peach)" title="Clic para cambiar imagen">
-            <img src="" alt="Icono de período" class="ic-img">
-            <span class="ic-emoji">📅</span>
-            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
-          </label>
-          <div style="flex:1"><div class="ic-label">Semestre</div><div class="ic-val" contenteditable="true" data-ph="Semestre Otoño 2024">Enero - Junio 2026</div></div>
+          <div class="ic-icon" style="background:var(--peach)">📅</div>
+          <div style="flex:1">
+            <div class="ic-label">Periodo</div>
+            <div class="ic-val">Enero - Junio 2026</div>
+          </div>
         </div>
+
         <div class="info-card">
-          <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
-            <img src="" alt="Icono de materia" class="ic-img">
-            <span class="ic-emoji">📘</span>
-            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
-          </label>
-          <div style="flex:1"><div class="ic-label">Carrera</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Ingenieria en Sistemas Computacionales</div></div>
-        </div>
-        <div class="info-card">
-          <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
-            <img src="" alt="Icono de materia" class="ic-img">
-            <span class="ic-emoji">📘</span>
-            <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
-          </label>
-          <div style="flex:1"><div class="ic-label">Asignatura</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Cómputo en la Nube</div></div>
+          <div class="ic-icon" style="background:var(--rose)">📘</div>
+          <div style="flex:1">
+            <div class="ic-label">Carrera</div>
+            <div class="ic-val">Ingeniería en Sistemas Computacionales</div>
+          </div>
         </div>
       </div>
     </div>
-   <div class="hero-vis logos-box">
-      <div class="school-logo-card">
-        <img src="assets/img/tecnm.png" alt="Logo TecNM">
+
+    <div class="hero-vis logos-box">
+      <div class="school-logo-card logo-tecnm">
+        <img src="assets/img/tecnm.png" alt="Logo Tecnológico Nacional de México">
       </div>
 
-      <div class="school-logo-card">
-        <img src="assets/img/tec-saltillo.png" alt="Logo TecNM Campus Saltillo">
+      <div class="school-logo-card logo-saltillo">
+        <img src="assets/img/tec-saltillo.png" alt="Logo Instituto Tecnológico de Saltillo">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDICE -->
+<section id="indice">
+  <div class="container">
+    <div class="stag">Contenido</div>
+    <h2 class="stitle">Índice del Portafolio</h2>
+    <div class="divider"></div>
+
+    <div class="index-grid">
+      <a href="#introduccion" class="index-card">
+        <span class="index-number">01</span>
+        <div>
+          <h3>Introducción</h3>
+          <p>Presentación general del portafolio y contexto de la asignatura.</p>
+        </div>
+      </a>
+
+      <a href="#objetivos" class="index-card">
+        <span class="index-number">02</span>
+        <div>
+          <h3>Objetivos del Curso</h3>
+          <p>Metas principales de aprendizaje en Cómputo en la Nube.</p>
+        </div>
+      </a>
+
+      <a href="#unidades" class="index-card">
+        <span class="index-number">03</span>
+        <div>
+          <h3>Unidades</h3>
+          <p>Evidencias y actividades desarrolladas durante el semestre.</p>
+        </div>
+      </a>
+
+      <a href="#reflexion" class="index-card">
+        <span class="index-number">04</span>
+        <div>
+          <h3>Reflexión Final</h3>
+          <p>Aprendizajes, logros y áreas de oportunidad identificadas.</p>
+        </div>
+      </a>
+
+      <a href="#conclusion" class="index-card">
+        <span class="index-number">05</span>
+        <div>
+          <h3>Conclusión</h3>
+          <p>Cierre de la experiencia académica y utilidad futura del curso.</p>
+        </div>
+      </a>
+
+      <a href="#acerca" class="index-card">
+        <span class="index-number">06</span>
+        <div>
+          <h3>Acerca de mí</h3>
+          <p>Datos escolares e información general de la estudiante.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -681,20 +1116,20 @@ footer span{color:var(--white)}
 
     <div class="intro-grid intro-grid-img">
       <div class="intro-text">
-        <p>
+       <p>
           Este portafolio de evidencias corresponde a la asignatura <strong>Cómputo en la Nube</strong>, 
-          perteneciente a la especialidad de <strong>Tecnologías Inteligentes</strong>. En él se plasma lo 
-          aprendido a lo largo del semestre, así como la evolución de las actividades realizadas, los 
-          conocimientos adquiridos y el desarrollo de competencias relacionadas con el uso de servicios, 
-          herramientas y modelos de trabajo en la nube.
+          perteneciente a la especialidad de <strong>Tecnologías Inteligentes</strong>. Su propósito es 
+          presentar de manera organizada las actividades desarrolladas durante el semestre, así como 
+          evidenciar el aprendizaje adquirido, el avance académico y las competencias fortalecidas a 
+          través de cada práctica.
         </p>
 
         <p>
-          El cómputo en la nube es un modelo tecnológico que permite acceder a recursos informáticos, como 
-          almacenamiento, procesamiento, redes y aplicaciones, a través de internet, de manera flexible y bajo 
-          demanda. En este sentido, este portafolio reúne evidencias que reflejan tanto la comprensión teórica 
-          de los temas abordados como su aplicación práctica, mostrando el proceso de aprendizaje, el 
-          fortalecimiento de habilidades y el avance académico logrado durante el curso.
+          El cómputo en la nube es un modelo tecnológico que permite utilizar recursos informáticos, 
+          como servidores, almacenamiento, redes, bases de datos y aplicaciones, mediante internet y 
+          de forma flexible. Por ello, este portafolio reúne evidencias que muestran la relación entre la 
+          teoría y la práctica, reflejando el proceso de aprendizaje, la evolución de los conocimientos y 
+          la importancia de la nube en el desarrollo de soluciones tecnológicas actuales.
         </p>
 
         <div class="intro-stats">
@@ -702,10 +1137,12 @@ footer span{color:var(--white)}
             <div class="istat-n">5</div>
             <div class="istat-l">Unidades</div>
           </div>
+
           <div class="istat">
-            <div class="istat-n">29</div>
+            <div class="istat-n">25</div>
             <div class="istat-l">Actividades</div>
           </div>
+
           <div class="istat">
             <div class="istat-n">✓</div>
             <div class="istat-l">Completado</div>
@@ -837,20 +1274,59 @@ footer span{color:var(--white)}
     <div class="stag">Crítica y Crecimiento</div>
     <h2 class="stitle">Reflexión Final del Curso</h2>
     <div style="width:44px;height:3px;background:var(--rose-mid);border-radius:2px;margin:14px 0 38px"></div>
+
     <div class="reflex-grid">
       <div class="reflex-text">
-        <p>A lo largo de este trayecto académico, la evolución de mi perspectiva profesional ha sido significativa. No solo se trata de la adquisición de conceptos técnicos, sino del desarrollo de una mentalidad analítica capaz de abordar problemas complejos con una visión sistémica.</p>
-        <p>Cada unidad presentada en este portafolio representa un peldaño en la construcción de mi identidad como investigadora y profesional. La integración de la teoría con la práctica me permitió entender que la excelencia no es un acto estático, sino un hábito de reflexión continua.</p>
-        <p>El mayor desafío no fue la complejidad de los temas, sino la capacidad de sintetizar lo aprendido en una narrativa coherente que refleje mis valores y competencias actuales.</p>
-        <div class="reflex-q">"La reflexión es el motor que transforma la experiencia en conocimiento aplicado."</div>
+        <p>
+          A lo largo del curso de <strong>Cómputo en la Nube</strong>, pude comprender la importancia de las
+          tecnologías cloud en el desarrollo de soluciones modernas, seguras y escalables. Durante el semestre
+          aprendí sobre plataformas como AWS, Google Cloud y Microsoft Azure, además de temas relacionados con
+          máquinas virtuales, servidores web, bases de datos, seguridad, Docker, redes y servicios administrados.
+        </p>
+
+        <p>
+          Mi aprendizaje fue evolucionando conforme avanzaban las actividades, ya que al inicio los temas eran
+          más conceptuales, pero después pude aplicarlos en prácticas reales, como la creación de máquinas virtuales,
+          instalación de servidores, despliegue de aplicaciones y migración hacia servicios administrados. Esto me
+          ayudó a mejorar mi capacidad para analizar problemas técnicos, seguir procesos de configuración y resolver
+          errores durante la implementación.
+        </p>
+
+        <p>
+          También identifiqué áreas de oportunidad, principalmente en seguridad, automatización, administración de
+          costos y configuración avanzada de servicios en la nube. Considero que estos conocimientos serán útiles en
+          mi futuro profesional, ya que la nube es una herramienta fundamental para crear soluciones tecnológicas
+          eficientes dentro del área de Tecnologías Inteligentes.
+        </p>
       </div>
+
       <div class="reflex-aside">
-        <h3>✦ Logros Clave</h3>
-        <div class="logro"><div class="ldot"></div><span>Dominio de metodologías ágiles</span></div>
-        <div class="logro"><div class="ldot"></div><span>Capacidad de síntesis crítica</span></div>
-        <div class="logro"><div class="ldot"></div><span>Liderazgo en proyectos grupales</span></div>
-        <div class="logro"><div class="ldot"></div><span>Comunicación técnica efectiva</span></div>
-        <div class="logro"><div class="ldot"></div><span>Pensamiento analítico avanzado</span></div>
+        <h3>Logros Clave</h3>
+
+        <div class="logro">
+          <div class="ldot"></div>
+          <span>Comprensión de plataformas cloud como AWS, Google Cloud y Microsoft Azure.</span>
+        </div>
+
+        <div class="logro">
+          <div class="ldot"></div>
+          <span>Creación, configuración y administración de servicios en la nube.</span>
+        </div>
+
+        <div class="logro">
+          <div class="ldot"></div>
+          <span>Despliegue de aplicaciones web y servidores en entornos cloud.</span>
+        </div>
+
+        <div class="logro">
+          <div class="ldot"></div>
+          <span>Aplicación de conceptos de seguridad, redes, Docker y servicios administrados.</span>
+        </div>
+
+        <div class="logro">
+          <div class="ldot"></div>
+          <span>Mayor capacidad para resolver errores técnicos y relacionar la teoría con la práctica.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -860,19 +1336,46 @@ footer span{color:var(--white)}
 <section id="conclusion">
   <div class="container">
     <div class="stag">Cierre</div>
-    <h2 class="stitle">Conclusión de la Experiencia</h2>
+    <h2 class="stitle">Conclusión</h2>
     <div class="divider"></div>
-    <div class="concl-grid">
-      <div class="concl-card">
-        <h3>📚 Síntesis Académica</h3>
-        <p>Este portafolio no es solo el cierre de una etapa, sino el preámbulo de mi carrera profesional. He logrado consolidar un cuerpo de conocimientos sólido, validado por la práctica y la autocrítica.</p>
-        <div class="tags"><span class="tag">Compromiso</span><span class="tag">Ética</span><span class="tag">Rigor</span></div>
-      </div>
-      <div class="concl-big"><div class="pct">100%</div><div class="pct-l">Objetivos Cumplidos</div></div>
-      <div class="concl-card" style="grid-column:span 2">
-        <h3>🚀 Visión a Futuro</h3>
-        <p>Mi meta a corto plazo es aplicar estos marcos teóricos en el ámbito laboral real, buscando siempre la innovación y la eficiencia en la resolución de problemas actuales de la industria. La experiencia académica ha sido un proceso transformador que ha pulido mi rigor científico y mi compromiso ético.</p>
-      </div>
+
+    <div class="conclusion-text">
+      <p>
+        Al finalizar la asignatura de <strong>Cómputo en la Nube</strong>, puedo decir que este curso fue una
+        experiencia muy importante dentro de mi formación académica. A lo largo del semestre pude comprender cómo
+        funcionan las plataformas en la nube, cómo se administran recursos tecnológicos y cómo se pueden implementar
+        soluciones reales utilizando servicios como máquinas virtuales, bases de datos, servidores web, seguridad,
+        Docker y servicios administrados.
+      </p>
+
+      <p>
+        Esta asignatura ha sido una de las que más conocimientos me ha dejado dentro de la carrera, ya que me permitió
+        pasar de la teoría a la práctica y enfrentarme a escenarios más cercanos al mundo profesional. Antes de cursarla,
+        tenía ciertos miedos o dudas sobre el uso de la nube, principalmente por la cantidad de configuraciones, servicios
+        y posibles errores que podían presentarse. Sin embargo, gracias a las actividades realizadas, pude dejar de lado
+        esos temores y entender que la nube es una herramienta accesible, útil y fundamental para el desarrollo de
+        soluciones tecnológicas actuales.
+      </p>
+
+      <p>
+        También considero que este curso fortaleció mi capacidad para analizar problemas, buscar soluciones, administrar
+        recursos y comprender la importancia de la seguridad, la disponibilidad y la escalabilidad en los sistemas
+        informáticos. Cada práctica representó una oportunidad para aprender algo nuevo, corregir errores y mejorar mi
+        forma de trabajar con tecnologías cloud.
+      </p>
+
+      <p>
+        Asimismo, agradezco haber contado con un docente que siempre estuvo abierto al diálogo y dispuesto a resolver
+        las dudas de los estudiantes. Ese acompañamiento fue importante para comprender mejor los temas, avanzar en las
+        prácticas y sentir mayor confianza al trabajar con herramientas nuevas.
+      </p>
+
+      <p>
+        En conclusión, <strong>Cómputo en la Nube</strong> fue una asignatura que tuvo un impacto significativo en mi
+        aprendizaje y en mi visión profesional. Los conocimientos adquiridos me servirán en futuros proyectos académicos
+        y laborales, especialmente dentro del área de <strong>Tecnologías Inteligentes</strong>, donde la nube representa
+        una base clave para crear soluciones modernas, seguras, escalables y eficientes.
+      </p>
     </div>
   </div>
 </section>
@@ -883,30 +1386,63 @@ footer span{color:var(--white)}
     <div class="stag">Sobre mí</div>
     <h2 class="stitle">Acerca de mí</h2>
     <div class="divider"></div>
+
     <div class="about-grid">
       <div>
-        <div class="about-photo">🌸</div>
-        <p style="font-size:.68rem;color:#bbb;text-align:center;margin-top:7px">Tu foto aquí</p>
+        <div class="about-photo">
+          <img src="assets/img/silvia.jpeg" alt="Foto de perfil">
+        </div>
       </div>
-      <div>
-        <div class="about-name" contenteditable="true">¡Hola! Soy una estudiante apasionada</div>
-        <p class="about-bio" contenteditable="true">Soy estudiante enfocada en el aprendizaje continuo y el desarrollo de competencias profesionales. Mi trayectoria ha sido marcada por una curiosidad insaciable y un compromiso constante con la excelencia.</p>
-        <div class="about-meta">
-          <div><div class="am-lbl">📍 Ubicación</div><div class="am-val" contenteditable="true">Ciudad, País</div></div>
-          <div><div class="am-lbl">🎓 Carrera</div><div class="am-val" contenteditable="true">Tu carrera aquí</div></div>
-        </div>
-        <div class="am-lbl" style="margin-bottom:8px">Intereses</div>
-        <div class="int-tags"><span class="int-tag">Tecnología</span><span class="int-tag">Innovación</span><span class="int-tag">Diseño</span></div>
-        <div class="about-actions">
-          <a href="mailto:" class="btn btn-p">✉ Enviar Mensaje</a>
-          <a href="#" class="btn btn-o">⬇ Descargar CV</a>
-        </div>
+
+      <div class="about-info-card">
+        <div class="about-name">Datos escolares</div>
+
+        <div class="about-data-list">
+          <div class="about-data-item">
+            <span>Nombre</span>
+            <p>Silvia Guadalupe Ramos Mendoza</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Número de Control</span>
+            <p>22050726</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Institución</span>
+            <p>Instituto Tecnológico de Saltillo</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Carrera</span>
+            <p>Ingeniería en Sistemas Computacionales</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Especialidad</span>
+            <p>Tecnologías Inteligentes</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Asignatura</span>
+            <p>Cómputo en la Nube</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Docente</span>
+            <p>Ing. Miguel Salazar del Bosque</p>
+          </div>
+
+          <div class="about-data-item">
+            <span>Semestre</span>
+            <p>Octavo Semestre</p>
+          </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer><p>© 2024 Portafolio de Evidencias · Silvia Guadalupe Ramos Mendoza</span></p></footer>
+<footer><p>© 2026 Portafolio de Evidencias · Silvia Guadalupe Ramos Mendoza</span></p></footer>
 
 <!-- MODAL -->
 <!-- MODAL -->
@@ -957,22 +1493,22 @@ const units = {
         num: '1.2',
         name: 'Síntesis de las Características de concepto de Cómputo en la Nube',
         file: 'assets/img/U1/1.2.pdf',
-        desc: 'Descripción de la actividad 2 de la Unidad 1.',
-        learned: 'Aprendí a identificar las características principales de los servicios en la nube y su relación con las necesidades de los usuarios.'
+        desc: 'Síntesis de las principales características del cómputo en la nube, como escalabilidad, accesibilidad, alta disponibilidad, autoservicio y seguridad.',
+        learned: 'Comprensión de cómo la nube permite usar recursos tecnológicos de forma flexible, remota y segura, adaptándose a las necesidades del usuario o la organización.'
       },
       {
         num: '1.3',
         name: 'Ventajas, Desventajas y Riesgos del Cómputo en la Nube',
         file: 'assets/img/U1/1.3.pdf',
-        desc: 'Descripción de la actividad 3 de la Unidad 1.',
-        learned: 'Reconocí los beneficios, riesgos y áreas de oportunidad que existen al utilizar plataformas y servicios basados en la nube.'
+        desc: 'Análisis de las ventajas, desventajas y riesgos del cómputo en la nube, considerando el uso de nubes públicas, privadas e híbridas.',
+        learned: 'Comprensión de cuándo conviene usar cada tipo de nube, cómo evitar la dependencia de un proveedor y cómo comparar costos frente a una infraestructura local.'
       },
       {
         num: '1.4',
         name: 'Mapa mental de los elementos del Cómputo en la Nube',
         file: 'assets/img/U1/1.4.pdf',
-        desc: 'Descripción de la actividad 4 de la Unidad 1.',
-        learned: 'Fortalecí mi comprensión sobre los modelos de implementación y servicios que conforman el ecosistema del cómputo en la nube.'
+        desc: 'Elaboración de un mapa mental sobre el cómputo en la nube, relacionando su arquitectura, características, modelos, servicios, ventajas y desventajas.',
+        learned: 'Organización de los conceptos principales de la nube y comprensión de cómo se conectan sus servicios, modelos de implementación y beneficios dentro de una infraestructura tecnológica.'
       }
     ]
   },
@@ -983,29 +1519,29 @@ const units = {
         num: '2.1',
         name: 'Explorar la plataforma AWS',
         file: 'assets/img/U2/2.1.pdf',
-        desc: 'Descripción de la actividad 1 de la Unidad 2.',
-        learned: 'Aprendí a analizar diferentes alternativas tecnológicas para implementar soluciones en la nube según las necesidades del proyecto.'
+        desc: 'Exploración de la plataforma AWS y sus principales servicios, como consola de administración, regiones, zonas de disponibilidad, almacenamiento, redes, seguridad, bases de datos y monitoreo.',
+        learned: 'Comprensión general de cómo AWS permite administrar recursos en la nube, identificar servicios según su función y reconocer modelos como IaaS, PaaS y SaaS para crear soluciones escalables y administradas.'
       },
       {
         num: '2.2',
         name: 'Explorar plataforma Google Cloud',
         file: 'assets/img/U2/2.2.pdf',
-        desc: 'Descripción de la actividad 2 de la Unidad 2.',
-        learned: 'Comprendí la diferencia entre nubes públicas, privadas e híbridas, así como sus ventajas en distintos contextos de uso.'
+        desc: 'Exploración de Google Cloud Platform y sus servicios principales, como Compute Engine, Cloud Run, Cloud Storage, BigQuery, VPC, IAM, Cloud Load Balancing y Vertex AI.',
+        learned: 'Reconocimiento de que Google Cloud destaca por su enfoque técnico, arquitectura cloud-native, red global, escalabilidad y fortaleza en Big Data e Inteligencia Artificial para desarrollar soluciones modernas en la nube.'
       },
       {
         num: '2.3',
         name: 'Actividad GitHub',
         file: 'assets/img/U2/2.3.pdf',
-        desc: 'Descripción de la actividad 3 de la Unidad 2.',
-        learned: 'Identifiqué cómo los servicios SaaS permiten utilizar aplicaciones mediante internet sin administrar directamente la infraestructura.'
+        desc: 'Exploración de GitHub como plataforma para crear repositorios, subir archivos, realizar commits, clonar proyectos, usar pull requests, issues, GitHub Pages, Insights y GitHub Actions.',
+        learned: 'Comprensión de cómo GitHub facilita el control de versiones, la colaboración en equipo, la organización de tareas y la automatización de despliegues en proyectos académicos y en la nube.'
       },
       {
         num: '2.4',
         name: 'Explorar la plataforma MS Azure',
         file: 'assets/img/U2/2.4.pdf',
-        desc: 'Descripción de la actividad 4 de la Unidad 2.',
-        learned: 'Relacioné la infraestructura tecnológica con la toma de decisiones para seleccionar servicios adecuados en ambientes de nube.'
+        desc: 'Exploración de Microsoft Azure como plataforma de cómputo en la nube, incluyendo sus modelos de servicio, portal, máquinas virtuales, bases de datos, almacenamiento, costos, seguridad, ventajas y riesgos.',
+        learned: 'Comprensión de cómo Azure permite desarrollar aplicaciones, administrar bases de datos e implementar servidores sin infraestructura física propia, reconociendo su flexibilidad, seguridad y la importancia de administrar correctamente los recursos en la nube.'
       }
     ]
   },
@@ -1016,8 +1552,8 @@ const units = {
         num: '3.1',
         name: 'Sinopsis de los microservicios y flujo devops',
         file: 'assets/img/U3/3.1.pdf',
-        desc: 'Descripción del proyecto principal de la Unidad 3.',
-        learned: 'Logré comprender la importancia de administrar correctamente los recursos en la nube y de relacionar la teoría con una solución práctica.'
+        desc: 'Análisis de servicios de microservicios y flujo DevOps, identificando etapas como desarrollo, construcción, pruebas, despliegue, monitoreo y mantenimiento.',
+        learned: 'Comprensión de cómo una aplicación puede dividirse en microservicios y cómo el flujo DevOps permite automatizar, desplegar y monitorear sistemas de forma más ordenada y eficiente.'
       }
     ]
   },
@@ -1028,64 +1564,64 @@ const units = {
         num: '4.1',
         name: 'Práctica de seguridad informática escalada de privilegios',
         file: 'assets/img/U4/4.1.pdf',
-        desc: 'Desarrollo de modelos o esquemas relacionados con la aplicación de servicios en la nube.',
-        learned: 'Aprendí a representar de forma estructurada los elementos necesarios para comprender una solución tecnológica.'
+        desc: 'Práctica de escalada de privilegios en Linux mediante la configuración de permisos inseguros en sudoers y el acceso a privilegios de administrador.',
+        learned: 'Comprensión de cómo una mala configuración de permisos puede permitir acceso no autorizado como administrador, resaltando la importancia de mantener una correcta seguridad en sistemas Linux.'
       },
       {
         num: '4.2',
         name: 'Demostrar la inyección SQL',
         file: 'assets/img/U4/4.2.pdf',
-        desc: 'Elaboración de diagramas para representar procesos, arquitectura o funcionamiento de soluciones en la nube.',
-        learned: 'Comprendí que los diagramas ayudan a visualizar mejor los componentes de una solución y facilitan su explicación.'
+        desc: 'Práctica de inyección SQL en una aplicación vulnerable, realizando pruebas de acceso sin contraseña y aplicando una mitigación mediante consultas preparadas con bind_param.',
+        learned: 'Comprensión de cómo una mala construcción de consultas puede permitir accesos no autorizados, resaltando la importancia de programar con seguridad desde el inicio para evitar vulnerabilidades.'
       },
       {
         num: '4.3',
         name: 'Seguridad (hardening) en servidor web Apache 2',
         file: 'assets/img/U4/4.3.pdf',
-        desc: 'Elaboración de documentos técnicos relacionados con los temas abordados durante la unidad.',
-        learned: 'Fortalecí mi capacidad para explicar conceptos técnicos de manera clara, ordenada y comprensible.'
+        desc: 'Configuración y aseguramiento de un servidor web Apache2 en Debian, aplicando hardening, HTTPS con certificado autofirmado, firewall, puertos y revisión de logs.',
+        learned: 'Comprensión de cómo proteger un servidor web desde su configuración básica, limitando información sensible, controlando el tráfico permitido y monitoreando posibles incidencias mediante logs.'
       },
       {
         num: '4.5',
         name: 'Comandos Dorks de Google',
         file: 'assets/img/U4/4.5.pdf',
-        desc: 'Aplicación de razonamiento lógico para resolver problemas relacionados con el desarrollo de soluciones informáticas.',
-        learned: 'Desarrollé habilidades para analizar problemas y proponer soluciones ordenadas mediante estructuras lógicas.'
+        desc: 'Uso de comandos Dorks de Google para hacking ético, orientados a localizar información pública expuesta, archivos, directorios abiertos y posibles configuraciones vulnerables.',
+        learned: 'Reconocimiento de la importancia de revisar qué información puede encontrarse públicamente en internet para detectar riesgos, corregir malas configuraciones y mejorar la seguridad de una infraestructura en la nube.'
       },
       {
         num: '4.6',
         name: 'Lluvia de conceptos de los aspectos de la ciberseguridad en la nube',
         file: 'assets/img/U4/4.6.pdf',
-        desc: 'Trabajo colaborativo para el desarrollo o análisis de actividades relacionadas con cómputo en la nube.',
-        learned: 'Reconocí la importancia de la comunicación y la colaboración para lograr mejores resultados en proyectos tecnológicos.'
+        desc: 'Identificación de conceptos relacionados con seguridad en la nube, como DNS, IAM, KMS, certificados, cifrado, SSL, VPN, trazabilidad, auditorías, respaldos, políticas y alta disponibilidad.',
+        learned: 'Reconocimiento de los elementos necesarios para proteger una infraestructura en la nube, considerando confidencialidad, integridad, disponibilidad, control de accesos y monitoreo de seguridad.'
       },
       {
         num: '4.7',
         name: 'Encontrar la contraseña (overthewire)',
         file: 'assets/img/U4/4.7.pdf',
-        desc: 'Investigación de herramientas, plataformas o servicios relacionados con la nube.',
-        learned: 'Aprendí a buscar, comparar y seleccionar información relevante para comprender mejor las tecnologías disponibles.'
+        desc: 'Actividad de OverTheWire Bandit, enfocada en encontrar contraseñas de niveles usando comandos de Linux, conexión SSH y exploración del sistema desde una máquina Debian.',
+        learned: 'Refuerzo del uso de la terminal Linux, comandos básicos de búsqueda y navegación, así como la importancia de investigar y resolver problemas prácticos en entornos de seguridad.'
       },
       {
         num: '4.8',
         name: 'Amenazas y Riesgos con Cómputo en la Nube',
         file: 'assets/img/U4/4.8.pdf',
-        desc: 'Presentación de resultados, avances o conceptos relacionados con la unidad.',
-        learned: 'Fortalecí mi habilidad para comunicar ideas técnicas de forma clara y estructurada frente a otros.'
+        desc: 'Síntesis sobre amenazas y riesgos del cómputo en la nube, considerando conceptos como NIST, modelos de servicio, modelos de despliegue, actores del ecosistema cloud y normas de seguridad.',
+        learned: 'Reconocimiento de la importancia de identificar riesgos en la nube para aplicar medidas de ciberseguridad, definir responsabilidades entre cliente y proveedor, y asegurar la disponibilidad de los sistemas.'
       },
       {
         num: '4.9',
         name: 'Políticas de ciberseguridad en CN',
         file: 'assets/img/U4/4.9.pdf',
-        desc: 'Organización de información o componentes para el desarrollo de una solución informática.',
-        learned: 'Comprendí que una buena estructura facilita el desarrollo, mantenimiento y comprensión de un proyecto.'
+        desc: 'Clasificación de controles de seguridad de la información en áreas humanas, dispositivos y software, considerando acceso lógico, contraseñas, internet, respaldo, auditoría y gestión de incidentes.',
+        learned: 'Identificación de medidas de seguridad aplicables en una organización o escuela, destacando el control de acceso, el uso responsable de internet y la gestión adecuada de usuarios y contraseñas.'
       },
       {
         num: '4.10',
         name: 'Análisis de tráfico de red con Wireshark para la prevención de ataques',
         file: 'assets/img/U4/4.10.pdf',
-        desc: 'Integración de los aprendizajes obtenidos durante la unidad mediante una actividad de cierre.',
-        learned: 'Logré sintetizar los conocimientos adquiridos y reconocer su aplicación dentro del contexto del cómputo en la nube.'
+        desc: 'Análisis de tráfico de red con Wireshark, observando protocolos como HTTP, HTTPS, DNS y TCP para identificar información visible durante la navegación.',
+        learned: 'Comprensión de cómo el tráfico sin cifrado puede exponer datos sensibles y de la importancia de utilizar HTTPS para proteger la información transmitida en la red.'
       }
     ]
   },
@@ -1096,50 +1632,50 @@ const units = {
         num: '5.2',
         name: 'Análisis y Diseño de una Arquitectura de Red en la Nube',
         file: 'assets/img/U5/5.2.pdf',
-        desc: 'Diseño de una propuesta o prototipo considerando el uso de servicios y herramientas en la nube.',
-        learned: 'Comprendí la importancia de diseñar soluciones funcionales que respondan a necesidades reales de los usuarios.'
+        desc: 'Análisis y diseño de una arquitectura de red en la nube para una institución educativa, utilizando servicios de seguridad, red privada, base de datos, respaldo, monitoreo y control de accesos.',
+        learned: 'Aplicación de conceptos de nube en un caso práctico, considerando seguridad, escalabilidad, disponibilidad, acceso remoto y optimización de costos para diseñar una solución funcional dentro de un presupuesto limitado.'
       },
       {
         num: '5.3',
         name: 'Curso introducción a la contenerización y virtualización',
         file: 'assets/img/U5/5.3.pdf',
-        desc: 'Planeación y organización de actividades para el desarrollo de una solución informática.',
-        learned: 'Fortalecí mi capacidad para organizar tareas, tiempos y recursos dentro de un proyecto tecnológico.'
+        desc: 'Curso sobre conceptos de contenerización y virtualización, revisando diferencias entre contenedores y máquinas virtuales, beneficios, limitaciones y casos de uso.',
+        learned: 'Comprensión de cómo la contenerización permite ejecutar aplicaciones de forma ligera y portable, y cómo se diferencia de la virtualización tradicional basada en máquinas virtuales'
       },
       {
         num: '5.4',
         name: 'Instalación de Docker',
         file: 'assets/img/U5/5.4.pdf',
-        desc: 'Revisión de conceptos relacionados con el análisis de grandes volúmenes de datos y su relación con la nube.',
-        learned: 'Aprendí que la nube facilita el almacenamiento, procesamiento y análisis de datos de forma escalable.'
+        desc: 'Instalación y configuración inicial de Docker Desktop en Windows, realizando pruebas con comandos como docker run hello-world, docker ps -a y docker images.',
+        learned: 'Comprensión del funcionamiento básico de Docker y su importancia en el desarrollo de software actual, logrando instalarlo correctamente y ejecutar pruebas iniciales para fortalecer el aprendizaje de contenedores.'
       },
       {
         num: '5.7',
         name: 'Creación de VM en la nube',
         file: 'assets/img/U5/5.7.pdf',
-        desc: 'Redacción de contenido académico relacionado con los temas abordados durante la unidad.',
-        learned: 'Mejoré mi capacidad para redactar ideas técnicas con orden, coherencia y sustento académico.'
+        desc: 'Creación de una máquina virtual en Microsoft Azure, configurando recursos básicos, región, seguridad, puertos y conexión remota mediante SSH',
+        learned: 'Comprensión del proceso de despliegue de una VM en la nube, considerando la administración de recursos, restricciones de suscripción y la correcta selección de parámetros para lograr una implementación exitosa.'
       },
       {
         num: '5.8',
         name: 'Instalación del entorno LAMP en una máquina virtual en infraestructura de la nube',
         file: 'assets/img/U5/5.8.pdf',
-        desc: 'Revisión o aplicación de pruebas para verificar el funcionamiento de una solución informática.',
-        learned: 'Aprendí que las pruebas permiten detectar errores y mejorar la calidad de una aplicación antes de su entrega.'
+        desc: 'Instalación de un entorno LAMP en una máquina virtual Ubuntu Server en Azure, configurando Linux, Apache, MySQL y PHP para poner en marcha un servidor web funcional.',
+        learned: 'Refuerzo de la administración de servidores en la nube, comprobando el funcionamiento de Apache, PHP y MySQL desde la terminal y el navegador.'
       },
       {
         num: '5.9',
         name: 'Despliegue de aplicación CRUD en la nube',
         file: 'assets/img/U5/5.9.pdf',
-        desc: 'Desarrollo de actividades en equipo para integrar conocimientos y avanzar en una solución tecnológica.',
-        learned: 'Comprendí que el liderazgo y la colaboración son fundamentales para alcanzar objetivos dentro de un proyecto.'
+        desc: 'Despliegue de una aplicación CRUD en Microsoft Azure usando una arquitectura de tres capas: servidor proxy, servidor de aplicación web y servidor de base de datos.',
+        learned: 'Comprensión práctica de cómo subir, configurar y ejecutar una aplicación web en la nube, resolviendo problemas de conexión, permisos y comunicación entre servidores.'
       },
       {
         num: '5.10',
         name: 'Migración a servicios administrados',
         file: 'assets/img/U5/5.10.pdf',
-        desc: 'Análisis de la relación entre tecnología, nube y uso responsable de recursos digitales.',
-        learned: 'Aprendí que las soluciones tecnológicas también deben considerar su impacto ambiental, social y operativo.'
+        desc: 'Migración de una aplicación CRUD en PHP hacia servicios administrados de Microsoft Azure, utilizando Azure App Service y Azure Database for MySQL Flexible Server.',
+        learned: 'Comprensión de cómo los servicios administrados simplifican la instalación, mantenimiento y administración del servidor, permitiendo enfocarse más en la aplicación y su conexión con la base de datos en la nube.'
       }
     ]
   }
