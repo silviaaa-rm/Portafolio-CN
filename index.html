@@ -926,6 +926,73 @@ section{padding:80px 5%}
   }
 }
 
+.ev-card{
+  position:relative;
+  cursor:pointer;
+}
+
+.card-click-layer{
+  position:absolute;
+  inset:0;
+  z-index:80;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+}
+
+.ev-thumb iframe,
+.ev-thumb img,
+.file-preview,
+.file-preview-wrap,
+.mobile-pdf-card,
+.file-fallback,
+.ev-overlay{
+  pointer-events:none;
+}
+
+@media(max-width:600px){
+  .desktop-pdf-preview,
+  .pdf-modal-frame{
+    display:none;
+  }
+
+  .mobile-pdf-card{
+    display:flex;
+  }
+
+  .modal-media{
+    background:#fff;
+    padding:22px 16px;
+    min-height:auto;
+    height:auto;
+  }
+
+  .pdf-modal-content{
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .pdf-open-btn{
+    display:inline-flex;
+    background:var(--rose-deep);
+    color:white;
+    padding:12px 24px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:800;
+  }
+
+  .modal-info{
+    background:white;
+    padding:16px;
+    border-top:1px solid var(--border);
+  }
+}
+
 /* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;z-index:1000;background:rgba(42,26,46,.72);align-items:center;justify-content:center;padding:16px}
 .modal-bg.open{display:flex}
@@ -1142,6 +1209,31 @@ section{padding:80px 5%}
   .about-data-list{
     grid-template-columns:1fr;
   }
+}
+
+/* Hace clickeable toda la tarjeta */
+.ev-card{
+  position:relative;
+  cursor:pointer;
+}
+
+.ev-card iframe,
+.ev-card img,
+.file-preview,
+.file-preview-wrap,
+.mobile-pdf-card,
+.file-fallback,
+.ev-overlay{
+  pointer-events:none;
+}
+
+.card-click-layer{
+  position:absolute;
+  inset:0;
+  z-index:50;
+  background:transparent;
+  border:none;
+  cursor:pointer;
 }
 
 /* FOOTER */
@@ -1868,6 +1960,9 @@ const units = {
 let activeUnit = 0;
 let activeAct = 0;
 
+let activeUnit = 0;
+let activeAct = 0;
+
 function buildCards(){
   for(let u = 1; u <= 5; u++){
     const grid = document.getElementById('grid-u' + u);
@@ -1883,12 +1978,11 @@ function buildCards(){
 
       card.className = 'ev-card';
       card.id = `card-u${u}-a${i}`;
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
 
       card.innerHTML = `
         <div class="ev-thumb" style="background:linear-gradient(135deg,${col.bg} 0%,#f5e0f0 100%)">
           ${getCardPreview(act, u, i)}
+
           <div class="ev-overlay">
             <div class="ev-ov-txt">Ver evidencia</div>
           </div>
@@ -1910,17 +2004,20 @@ function buildCards(){
             <p>${act.learned}</p>
           </div>
         </div>
+
+        <button 
+          class="card-click-layer" 
+          type="button" 
+          aria-label="Abrir evidencia de ${act.name}">
+        </button>
       `;
 
-      card.addEventListener('click', () => {
-        openModal(u, i);
-      });
+      const clickLayer = card.querySelector('.card-click-layer');
 
-      card.addEventListener('keydown', (e) => {
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          openModal(u, i);
-        }
+      clickLayer.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        openModal(u, i);
       });
 
       grid.appendChild(card);
@@ -1929,8 +2026,6 @@ function buildCards(){
 }
 
 function getCardPreview(act, u, i){
-  const previewId = `preview-u${u}-a${i}`;
-
   if(!act.file){
     return `
       <div class="file-preview-wrap">
@@ -1946,32 +2041,19 @@ function getCardPreview(act, u, i){
   const file = act.file.toLowerCase();
 
   if(file.endsWith('.pdf')){
-  return `
-    <div class="file-preview-wrap">
-      <iframe 
-        class="file-preview desktop-pdf-preview"
-        src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
-        title="${act.name}">
-      </iframe>
-
-      <div class="mobile-pdf-card">
-        <div class="file-fallback-type">PDF</div>
-        <div class="file-fallback-title">${act.name}</div>
-        <div class="file-fallback-msg">Toca para abrir evidencia</div>
-      </div>
-    </div>
-  `;
-}
-
-  if(
-    file.endsWith('.png') ||
-    file.endsWith('.jpg') ||
-    file.endsWith('.jpeg') ||
-    file.endsWith('.webp')
-  ){
     return `
-      <div class="file-preview-wrap" id="${previewId}">
-        <img class="file-preview" src="${act.file}" alt="${act.name}">
+      <div class="file-preview-wrap">
+        <iframe 
+          class="file-preview desktop-pdf-preview"
+          src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+          title="${act.name}">
+        </iframe>
+
+        <div class="mobile-pdf-card">
+          <div class="file-fallback-type">PDF</div>
+          <div class="file-fallback-title">${act.name}</div>
+          <div class="file-fallback-msg">Toca para abrir evidencia</div>
+        </div>
       </div>
     `;
   }
@@ -1987,104 +2069,15 @@ function getCardPreview(act, u, i){
   `;
 }
 
-function renderPreview(previewId, act){
-  const box = document.getElementById(previewId);
-  if(!box) return;
-
-  const file = act.file.toLowerCase();
-
-  if(
-    file.endsWith('.png') ||
-    file.endsWith('.jpg') ||
-    file.endsWith('.jpeg') ||
-    file.endsWith('.webp')
-  ){
-    box.innerHTML = `
-      <img 
-        class="file-preview"
-        src="${act.file}" 
-        alt="${act.name}"
-        onerror="showPreviewError('${previewId}', '${safeText(act.name)}')"
-      >
-    `;
-    return;
-  }
-
-  if(file.endsWith('.pdf')){
-    box.innerHTML = `
-      <iframe 
-        class="file-preview"
-        src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
-        title="${act.name}">
-      </iframe>
-    `;
-    return;
-  }
-
-  showPreviewError(previewId, act.name);
-}
-
-function showPreviewError(previewId, title){
-  const box = document.getElementById(previewId);
-  if(!box) return;
-
-  box.innerHTML = `
-    <div class="file-fallback">
-      <div class="file-fallback-type">Evidencia</div>
-      <div class="file-fallback-title">${title}</div>
-      <div class="file-fallback-msg">No se pudo cargar la vista previa</div>
-    </div>
-  `;
-}
-
-function safeText(text){
-  return String(text).replace(/'/g, "\\'");
-}
-
-async function checkEvidenceFiles(){
-  for(let u = 1; u <= 5; u++){
-    if(!units[u] || !units[u].activities) continue;
-
-    for(let i = 0; i < units[u].activities.length; i++){
-      const act = units[u].activities[i];
-      const previewId = `preview-u${u}-a${i}`;
-
-      if(!act.file){
-        showPreviewError(previewId, act.name);
-        continue;
-      }
-
-      try{
-        const response = await fetch(act.file, { method: 'HEAD' });
-
-        if(response.ok){
-          renderPreview(previewId, act);
-        }else{
-          showPreviewError(previewId, act.name);
-        }
-      }catch(error){
-        showPreviewError(previewId, act.name);
-      }
-    }
-  }
-}
-
 function getModalMedia(act){
-  if(file.endsWith('.pdf')){
-  return `
-    <div class="pdf-modal-content">
-      <iframe 
-        class="pdf-modal-frame"
-        src="${act.file}#toolbar=1&navpanes=0"
-        title="${act.name}">
-      </iframe>
-
-      <a class="pdf-open-btn" href="${act.file}" target="_blank">
-        Abrir PDF
-      </a>
-    </div>
-  `;
-}
+  if(!act.file){
+    return `
+      <div class="no-file">
+        <div class="nf-icon">Evidencia</div>
+        <p>No se ha agregado evidencia para esta actividad.</p>
+      </div>
+    `;
+  }
 
   const file = act.file.toLowerCase();
 
@@ -2102,15 +2095,6 @@ function getModalMedia(act){
         </a>
       </div>
     `;
-  }
-
-  if(
-    file.endsWith('.png') ||
-    file.endsWith('.jpg') ||
-    file.endsWith('.jpeg') ||
-    file.endsWith('.webp')
-  ){
-    return `<img src="${act.file}" alt="${act.name}">`;
   }
 
   return `
@@ -2141,6 +2125,50 @@ function openModal(u, i){
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeBg(e){
+  if(e.target === document.getElementById('modal')){
+    closeModal();
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    closeModal();
+  }
+});
+
+function showUnit(n){
+  document.querySelectorAll('.unit-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  document.querySelectorAll('.utab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  document.getElementById('unit-' + n).classList.add('active');
+  document.querySelectorAll('.utab')[n - 1].classList.add('active');
+}
+
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildCards();
+});
 
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
