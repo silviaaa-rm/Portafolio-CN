@@ -802,6 +802,66 @@ section{padding:80px 5%}
   }
 }
 
+/* Evita que la vista previa tape el texto de la tarjeta */
+.ev-thumb{
+  height:210px;
+  min-height:210px;
+  max-height:210px;
+  overflow:hidden;
+  position:relative;
+  flex-shrink:0;
+}
+
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.file-preview,
+.desktop-pdf-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+  object-fit:cover;
+  pointer-events:none;
+}
+
+.ev-body{
+  position:relative;
+  z-index:2;
+  background:var(--white);
+}
+
+.ev-card{
+  overflow:hidden;
+}
+
+@media(max-width:600px){
+  .ev-thumb{
+    height:180px;
+    min-height:180px;
+    max-height:180px;
+  }
+
+  .desktop-pdf-preview{
+    display:none !important;
+  }
+
+  .mobile-pdf-card{
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px;
+  }
+}
+
 /* INDICE */
 #indice{
   background:var(--white);
@@ -1860,13 +1920,11 @@ function buildCards(){
   }
 }
 
-function getCardPreview(act, u, i){
-  const previewId = `preview-u${u}-a${i}`;
-
+function getCardPreview(act){
   if(!act.file){
     return `
       <div class="file-preview-wrap">
-        <div class="file-fallback">
+        <div class="mobile-pdf-card">
           <div class="file-fallback-type">Evidencia</div>
           <div class="file-fallback-title">${act.name}</div>
           <div class="file-fallback-msg">No se ha agregado evidencia</div>
@@ -1879,7 +1937,7 @@ function getCardPreview(act, u, i){
 
   if(file.endsWith('.pdf')){
     return `
-      <div class="file-preview-wrap" id="${previewId}">
+      <div class="file-preview-wrap">
         <iframe 
           class="file-preview desktop-pdf-preview"
           src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
@@ -1889,31 +1947,22 @@ function getCardPreview(act, u, i){
         <div class="mobile-pdf-card">
           <div class="file-fallback-type">PDF</div>
           <div class="file-fallback-title">${act.name}</div>
-          <div class="file-fallback-msg">Toca para ver evidencia</div>
+          <a class="mobile-open-btn" href="${act.file}" target="_blank" onclick="event.stopPropagation();">
+            Abrir
+          </a>
         </div>
-      </div>
-    `;
-  }
-
-  if(
-    file.endsWith('.png') ||
-    file.endsWith('.jpg') ||
-    file.endsWith('.jpeg') ||
-    file.endsWith('.webp')
-  ){
-    return `
-      <div class="file-preview-wrap" id="${previewId}">
-        <img class="file-preview" src="${act.file}" alt="${act.name}">
       </div>
     `;
   }
 
   return `
     <div class="file-preview-wrap">
-      <div class="file-fallback">
+      <div class="mobile-pdf-card">
         <div class="file-fallback-type">Archivo</div>
         <div class="file-fallback-title">${act.name}</div>
-        <div class="file-fallback-msg">Toca para abrir evidencia</div>
+        <a class="mobile-open-btn" href="${act.file}" target="_blank" onclick="event.stopPropagation();">
+          Abrir
+        </a>
       </div>
     </div>
   `;
