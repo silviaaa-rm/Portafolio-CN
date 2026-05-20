@@ -128,6 +128,114 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);backgrou
   }
 }
 
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  position:relative;
+  background:#fff7fb;
+  border:1px solid #f0c6d8;
+  box-shadow:0 14px 35px rgba(194,84,122,.25);
+  overflow:hidden;
+}
+
+.file-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  background:white;
+  pointer-events:none;
+  display:block;
+}
+
+.file-fallback{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.file-fallback-type{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  margin-bottom:8px;
+}
+
+.file-fallback-title{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.3;
+  max-width:260px;
+  margin-bottom:8px;
+}
+
+.file-fallback-msg{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--rose-dark);
+}
+
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  position:relative;
+  background:#fff7fb;
+  border:1px solid #f0c6d8;
+  box-shadow:0 14px 35px rgba(194,84,122,.25);
+  overflow:hidden;
+}
+
+.file-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  background:white;
+  pointer-events:none;
+  display:block;
+}
+
+.file-fallback{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.file-fallback-type{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  margin-bottom:8px;
+}
+
+.file-fallback-title{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.3;
+  max-width:260px;
+  margin-bottom:8px;
+}
+
+.file-fallback-msg{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--rose-dark);
+}
+
 /* SECTION */
 section{padding:80px 5%}
 .container{max-width:1100px;margin:0 auto}
@@ -194,6 +302,20 @@ section{padding:80px 5%}
 @media(max-width:800px){.intro-grid{grid-template-columns:1fr;gap:28px}.intro-stats{grid-template-columns:repeat(3,1fr)}}
 
 /* OBJETIVOS */
+.obj-number{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1rem;
+  font-weight:800;
+  color:var(--rose-deep);
+  margin-bottom:14px;
+  letter-spacing:-.03em;
+}
+
 #objetivos{background:var(--cream)}
 .obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .obj-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:transform .2s,box-shadow .2s}
@@ -212,6 +334,13 @@ section{padding:80px 5%}
 .unit-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
 .uicon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem}
 .unit-header h2{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:var(--text);font-weight:800;letter-spacing:-.04em}
+
+.unit-number{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--rose-deep);
+  letter-spacing:-.03em;
+}
 
 /* EV CARDS */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
@@ -233,6 +362,153 @@ section{padding:80px 5%}
 .ev-learned{background:var(--rose);border-radius:var(--r-sm);padding:11px 13px;margin-top:auto;border-left:3px solid var(--rose-dark)}
 .ev-ll{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:3px}
 .ev-learned p{font-size:.77rem;color:var(--text);font-style:italic;line-height:1.4}
+
+.pdf-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  pointer-events:none;
+  background:white;
+}
+
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  position:relative;
+  background:#fff7fb;
+  border:1px solid #f0c6d8;
+  box-shadow:0 14px 35px rgba(194,84,122,.25);
+  overflow:hidden;
+}
+
+.file-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  background:white;
+  pointer-events:none;
+  display:block;
+}
+
+.file-preview-label{
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  background:rgba(255,247,251,.92);
+  backdrop-filter:blur(8px);
+  border:1px solid #f0c6d8;
+  border-radius:14px;
+  padding:8px 12px;
+  box-shadow:0 8px 22px rgba(194,84,122,.18);
+}
+
+.file-preview-label span{
+  display:block;
+  font-size:.65rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--rose-dark);
+  margin-bottom:2px;
+}
+
+.file-preview-label small{
+  display:block;
+  font-size:.72rem;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.2;
+}
+
+.file-fallback{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.file-fallback-type{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  margin-bottom:8px;
+}
+
+.file-fallback-title{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.3;
+  max-width:260px;
+  margin-bottom:8px;
+}
+
+.file-fallback-msg{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--rose-dark);
+}
+
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  position:relative;
+  background:#fff7fb;
+  border:1px solid #f0c6d8;
+  box-shadow:0 14px 35px rgba(194,84,122,.25);
+  overflow:hidden;
+}
+
+.file-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  background:white;
+  pointer-events:none;
+  display:block;
+}
+
+.file-fallback{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.file-fallback-type{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  margin-bottom:8px;
+}
+
+.file-fallback-title{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.3;
+  max-width:260px;
+  margin-bottom:8px;
+}
+
+.file-fallback-msg{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--rose-dark);
+}
 
 /* MODAL */
 .modal-bg{display:none;position:fixed;inset:0;z-index:1000;background:rgba(42,26,46,.72);align-items:center;justify-content:center;padding:16px}
@@ -450,12 +726,49 @@ footer span{color:var(--white)}
     <div class="stag">Metas</div>
     <h2 class="stitle">Objetivos del Curso</h2>
     <div class="divider"></div>
-    <p class="sdesc">Las metas que guían el desarrollo académico y profesional durante este período de formación.</p>
+    <p class="sdesc">
+  Objetivos formulados con base en las competencias a desarrollar del programa de la asignatura Cómputo en la Nube.
+  </p>
+
     <div class="obj-grid">
-      <div class="obj-card"><div class="obj-icon-wrap" style="background:var(--rose)">🌱</div><h3>Crecimiento Cognitivo</h3><p>Desarrollar habilidades críticas y analíticas para abordar problemas complejos desde diversas perspectivas teóricas.</p></div>
-      <div class="obj-card"><div class="obj-icon-wrap" style="background:var(--lilac)">🔮</div><h3>Aplicación Práctica</h3><p>Implementar herramientas metodológicas en casos reales para fortalecer la conexión entre la academia y el campo profesional.</p></div>
-      <div class="obj-card"><div class="obj-icon-wrap" style="background:var(--peach)">💡</div><h3>Reflexión Crítica</h3><p>Fomentar la autoevaluación constante para identificar áreas de mejora y consolidar los aciertos en el aprendizaje autónomo.</p></div>
-      <div class="obj-card"><div class="obj-icon-wrap" style="background:var(--rose)">🏆</div><h3>Excelencia Académica</h3><p>Lograr un dominio integral de los contenidos del programa demostrando originalidad y rigor en cada actividad.</p></div>
+      <div class="obj-card">
+        <div class="obj-number" style="background:var(--rose)">01</div>
+        <h3>Fundamentos del cómputo en la nube</h3>
+        <p>
+          Comprender los fundamentos del cómputo en la nube, identificando sus conceptos principales,
+          características, beneficios, riesgos y modelos de implementación, así como los servicios que
+          puede ofrecer.
+        </p>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-number" style="background:var(--lilac)">02</div>
+        <h3>Infraestructura y alternativas tecnológicas</h3>
+        <p>
+          Analizar la infraestructura y las alternativas tecnológicas para la implementación de soluciones
+          en la nube, considerando el uso de nubes públicas, privadas y servicios como SaaS para responder
+          a diferentes necesidades.
+        </p>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-number" style="background:var(--peach)">03</div>
+        <h3>Administración y despliegue en la nube</h3>
+        <p>
+          Aplicar principios, herramientas y servicios de administración en la nube para diseñar, desarrollar
+          y desplegar aplicaciones informáticas, relacionando la teoría vista en clase con actividades prácticas.
+        </p>
+      </div>
+
+      <div class="obj-card">
+        <div class="obj-number" style="background:var(--rose)">04</div>
+        <h3>Integración de conocimientos</h3>
+        <p>
+          Integrar los conocimientos adquiridos durante el semestre en una propuesta o solución basada en la nube,
+          evidenciando el desarrollo de competencias técnicas, el análisis de áreas de oportunidad y la creación
+          de aplicaciones informáticas funcionales.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -466,7 +779,8 @@ footer span{color:var(--white)}
     <div class="stag">Evidencias</div>
     <h2 class="stitle">Unidades de Aprendizaje</h2>
     <div class="divider"></div>
-    <p class="sdesc">Haz clic en cualquier tarjeta para ver la evidencia completa y cambiar el ícono de la actividad.</p>
+    <!-- <p class="sdesc">Haz clic en cualquier tarjeta para ver la evidencia completa y cambiar el ícono de la actividad.</p> -->
+
     <div class="unit-tabs">
       <button class="utab active" onclick="showUnit(1)">Unidad 1</button>
       <button class="utab" onclick="showUnit(2)">Unidad 2</button>
@@ -474,24 +788,44 @@ footer span{color:var(--white)}
       <button class="utab" onclick="showUnit(4)">Unidad 4</button>
       <button class="utab" onclick="showUnit(5)">Unidad 5</button>
     </div>
+
     <div class="unit-panel active" id="unit-1">
-      <div class="unit-header"><div class="uicon" style="background:var(--rose)">🌸</div><h2>Unidad 1: Fundamentos y Conceptos</h2></div>
+      <div class="unit-header">
+        <div class="uicon unit-number" style="background:var(--rose)">01</div>
+        <h2>Unidad 1: Introducción y fundamentos de Cómputo en la Nube</h2>
+      </div>
       <div class="cards-grid" id="grid-u1"></div>
     </div>
+
     <div class="unit-panel" id="unit-2">
-      <div class="unit-header"><div class="uicon" style="background:var(--lilac)">🔮</div><h2>Unidad 2: Herramientas y Aplicación</h2></div>
+      <div class="unit-header">
+        <div class="uicon unit-number" style="background:var(--lilac)">02</div>
+        <h2>Unidad 2: Arquitectura de la nube</h2>
+      </div>
       <div class="cards-grid" id="grid-u2"></div>
     </div>
+
     <div class="unit-panel" id="unit-3">
-      <div class="unit-header"><div class="uicon" style="background:var(--peach)">🍑</div><h2>Unidad 3: Fundamentos y Estructura</h2></div>
+      <div class="unit-header">
+        <div class="uicon unit-number" style="background:var(--peach)">03</div>
+        <h2>Unidad 3: Consideraciones para el desarrollo</h2>
+      </div>
       <div class="cards-grid" id="grid-u3"></div>
     </div>
+
     <div class="unit-panel" id="unit-4">
-      <div class="unit-header"><div class="uicon" style="background:var(--rose)">🦋</div><h2>Unidad 4: Aplicación y Práctica</h2></div>
+      <div class="unit-header">
+        <div class="uicon unit-number" style="background:var(--rose)">04</div>
+        <h2>Unidad 4: Seguridad</h2>
+      </div>
       <div class="cards-grid" id="grid-u4"></div>
     </div>
+
     <div class="unit-panel" id="unit-5">
-      <div class="unit-header"><div class="uicon" style="background:var(--lilac)">✨</div><h2>Unidad 5: Desarrollo y Gestión</h2></div>
+      <div class="unit-header">
+        <div class="uicon unit-number" style="background:var(--lilac)">05</div>
+        <h2>Unidad 5: Diseño y Desarrollo de una aplicación informática en la nube</h2>
+      </div>
       <div class="cards-grid" id="grid-u5"></div>
     </div>
   </div>
@@ -575,6 +909,7 @@ footer span{color:var(--white)}
 <footer><p>© 2024 Portafolio de Evidencias · Silvia Guadalupe Ramos Mendoza</span></p></footer>
 
 <!-- MODAL -->
+<!-- MODAL -->
 <div class="modal-bg" id="modal" onclick="closeBg(event)">
   <div class="modal-box">
     <div class="modal-hdr">
@@ -584,22 +919,21 @@ footer span{color:var(--white)}
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
+
     <div class="modal-body">
       <div class="modal-media" id="m-media"></div>
-      <div class="icon-section">
-        <div class="lbl">Ícono:</div>
-        <div class="icon-picker" id="icon-picker"></div>
-      </div>
+
       <div class="modal-info">
         <p class="m-desc" id="m-desc"></p>
-        <div class="m-learned"><div class="lbl">¿Qué aprendí?</div><p id="m-learned"></p></div>
+        <div class="m-learned">
+          <div class="lbl">¿Qué aprendí?</div>
+          <p id="m-learned"></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 <script>
-const ICONS = ['🌸','🌺','🦋','✨','💫','🌙','⭐','🌈','🍀','🌻','🌷','🎀','💎','🔮','🪄','📖','✏️','📝','🖊️','📚','🗂️','📊','📈','💡','🔬','🧪','🎨','🎭','🎵','🏆','🎯','🌟','💜','🌿','🪷','🫧','🌼','🫐','🍃','🌊'];
 
 const UNIT_COLORS = {
   1:{bg:'#fde8f0',text:'#8a3056'},
@@ -610,216 +944,477 @@ const UNIT_COLORS = {
 };
 
 const units = {
-  1:{activities:[
-    {num:'01',name:'Actividad 1',icon:'🌸',desc:'Descripción de la actividad 1 de la Unidad 1. Edita este texto haciendo clic en la tarjeta.',learned:'¿Qué aprendiste con esta actividad? Edita este espacio.'},
-    {num:'02',name:'Actividad 2',icon:'🦋',desc:'Descripción de la actividad 2 de la Unidad 1.',learned:'Aprendizaje relevante de la actividad 2.'},
-    {num:'03',name:'Actividad 3',icon:'✨',desc:'Descripción de la actividad 3 de la Unidad 1.',learned:'Aprendizaje relevante de la actividad 3.'},
-    {num:'04',name:'Actividad 4',icon:'💡',desc:'Descripción de la actividad 4 de la Unidad 1.',learned:'Aprendizaje relevante de la actividad 4.'},
-  ]},
-  2:{activities:[
-    {num:'01',name:'Actividad 1',icon:'🔮',desc:'Descripción de la actividad 1 de la Unidad 2.',learned:'Aprendizaje de la actividad.'},
-    {num:'02',name:'Actividad 2',icon:'🎀',desc:'Descripción de la actividad 2 de la Unidad 2.',learned:'Aprendizaje de la actividad.'},
-    {num:'03',name:'Actividad 3',icon:'📊',desc:'Descripción de la actividad 3 de la Unidad 2.',learned:'Aprendizaje de la actividad.'},
-    {num:'04',name:'Actividad 4',icon:'🌙',desc:'Descripción de la actividad 4 de la Unidad 2.',learned:'Aprendizaje de la actividad.'},
-  ]},
-  3:{activities:[
-    {num:'01',name:'Proyecto Principal',icon:'🏆',desc:'Descripción del proyecto principal de la Unidad 3.',learned:'Logré comprender la importancia de la jerarquía de datos y cómo la visualización clara puede transformar información compleja en conocimiento accionable.'},
-  ]},
-  4:{activities:[
-    {num:'4.1',name:'Modelado',icon:'📈',desc:'Desarrollo de modelos predictivos basados en variables estocásticas controladas.',learned:'La importancia de la precisión en la recolección de datos primarios.'},
-    {num:'4.2',name:'Diagramación',icon:'🗂️',desc:'Mapeo de flujos de procesos complejos mediante notación BPMN 2.0 refinada.',learned:'A sintetizar procesos complejos en visualizaciones digeribles.'},
-    {num:'4.3',name:'Redacción',icon:'✏️',desc:'Elaboración de informes técnicos con enfoque en la usabilidad del lector final.',learned:'Adaptar el lenguaje técnico según el perfil de la audiencia.'},
-    {num:'4.4',name:'Prototipado',icon:'🎨',desc:'Diseño de interfaces funcionales para entornos de aprendizaje virtual.',learned:'Iterar rápidamente basándome en el feedback temprano.'},
-    {num:'4.5',name:'Lógica',icon:'🔬',desc:'Resolución de problemas algorítmicos aplicados a la gestión de recursos.',learned:'Optimización de tiempos mediante estructuras de datos eficientes.'},
-    {num:'4.6',name:'Colaboración',icon:'🌈',desc:'Taller de co-creación para la resolución de conflictos en proyectos.',learned:'La empatía es clave para el éxito de cualquier equipo técnico.'},
-    {num:'4.7',name:'Investigación',icon:'📚',desc:'Estudio comparativo de metodologías ágiles en entornos híbridos.',learned:'No existe una metodología única; la flexibilidad es vital.'},
-    {num:'4.8',name:'Exposición',icon:'🌟',desc:'Presentación final de resultados ante el comité evaluador.',learned:'Transmitir pasión y claridad multiplica el impacto del mensaje.'},
-    {num:'4.9',name:'Estructuración',icon:'📖',desc:'Creación de taxonomías de información para bibliotecas digitales.',learned:'La organización lógica facilita enormemente el acceso al conocimiento.'},
-    {num:'4.10',name:'Síntesis',icon:'🌿',desc:'Reflexión final y compilación del portafolio académico integral.',learned:'El aprendizaje es un proceso continuo de autorrealimentación.'},
-  ]},
-  5:{activities:[
-    {num:'01',name:'Investigación de Mercado',icon:'🔭',desc:'Análisis cualitativo y cuantitativo de tendencias emergentes en el sector tecnológico regional.',learned:'Desarrollé habilidades críticas en el filtrado de datos y la síntesis de reportes técnicos complejos.'},
-    {num:'02',name:'Diseño de Prototipos',icon:'🎨',desc:'Creación de interfaces interactivas de alta fidelidad centradas en la experiencia del usuario para dispositivos móviles.',learned:'La importancia de la arquitectura de información y el testeo iterativo con usuarios reales.'},
-    {num:'03',name:'Gestión de Proyectos',icon:'🏗️',desc:'Implementación de metodologías ágiles para la coordinación de equipos multidisciplinarios en entornos remotos.',learned:'Dominé herramientas de seguimiento de tareas y comunicación asertiva para evitar cuellos de botella.'},
-    {num:'04',name:'Análisis de Big Data',icon:'📊',desc:'Procesamiento de grandes volúmenes de datos para identificar patrones de consumo en plataformas e-learning.',learned:'Aprendí a utilizar algoritmos de limpieza de datos y visualización avanzada para comunicar hallazgos.'},
-    {num:'05',name:'Ética en IA',icon:'🤖',desc:'Debate y redacción de ensayos sobre las implicaciones éticas del uso de algoritmos generativos en la educación.',learned:'Comprendí la necesidad de un marco regulatorio que proteja la integridad académica frente al avance tecnológico.'},
-    {num:'06',name:'Estrategias UX',icon:'💎',desc:'Definición de mapas de empatía y recorridos del usuario para optimizar procesos de inscripción universitaria.',learned:'Identifiqué puntos de dolor críticos en el flujo administrativo, proponiendo soluciones que reducen la fricción.'},
-    {num:'07',name:'Escritura Académica',icon:'🖊️',desc:'Redacción de un artículo de revisión sobre la evolución de sistemas de gestión de aprendizaje en la última década.',learned:'Mejoré mi capacidad de citación normativa y la estructura lógica de argumentos persuasivos.'},
-    {num:'08',name:'Testing de Software',icon:'🧪',desc:'Ejecución de pruebas unitarias y de integración para una aplicación web escalable de servicios bibliotecarios.',learned:'La rigurosidad en las pruebas automatizadas es fundamental para garantizar la estabilidad en producción.'},
-    {num:'09',name:'Liderazgo Colaborativo',icon:'🌺',desc:'Dirección de un equipo de 5 personas para el desarrollo de un proyecto integrador sobre sostenibilidad urbana.',learned:'Aprendí a delegar basándome en fortalezas individuales y a gestionar conflictos de manera constructiva.'},
-    {num:'10',name:'Sostenibilidad Digital',icon:'🌍',desc:'Propuesta técnica para la reducción de huella de carbono en centros de datos educativos mediante energía renovable.',learned:'La tecnología debe avanzar de la mano con la responsabilidad ambiental para un futuro viable.'},
-  ]},
+  1: {
+    activities: [
+      {
+  num: '1.1',
+  name: 'Arquitectura de red de computadoras',
+  file: 'assets/img/U1/1.1.pdf',
+  desc: 'Diseño de una infraestructura de red local para un sistema web con servidores Linux, Apache, PHP, MySQL y réplica.',
+  learned: 'Identificación de la función de cada servidor, la asignación de direcciones IP y la importancia del router y firewall en la seguridad de la red.'
+},
+      {
+        num: '02',
+        name: 'Actividad 2',
+        file: 'assets/evidencias/unidad1-actividad2.pdf',
+        desc: 'Descripción de la actividad 2 de la Unidad 1.',
+        learned: 'Aprendí a identificar las características principales de los servicios en la nube y su relación con las necesidades de los usuarios.'
+      },
+      {
+        num: '03',
+        name: 'Actividad 3',
+        file: 'assets/evidencias/unidad1-actividad3.pdf',
+        desc: 'Descripción de la actividad 3 de la Unidad 1.',
+        learned: 'Reconocí los beneficios, riesgos y áreas de oportunidad que existen al utilizar plataformas y servicios basados en la nube.'
+      },
+      {
+        num: '04',
+        name: 'Actividad 4',
+        file: 'assets/evidencias/unidad1-actividad4.pdf',
+        desc: 'Descripción de la actividad 4 de la Unidad 1.',
+        learned: 'Fortalecí mi comprensión sobre los modelos de implementación y servicios que conforman el ecosistema del cómputo en la nube.'
+      }
+    ]
+  },
+
+  2: {
+    activities: [
+      {
+        num: '01',
+        name: 'Actividad 1',
+        file: 'assets/evidencias/unidad2-actividad1.pdf',
+        desc: 'Descripción de la actividad 1 de la Unidad 2.',
+        learned: 'Aprendí a analizar diferentes alternativas tecnológicas para implementar soluciones en la nube según las necesidades del proyecto.'
+      },
+      {
+        num: '02',
+        name: 'Actividad 2',
+        file: 'assets/evidencias/unidad2-actividad2.pdf',
+        desc: 'Descripción de la actividad 2 de la Unidad 2.',
+        learned: 'Comprendí la diferencia entre nubes públicas, privadas e híbridas, así como sus ventajas en distintos contextos de uso.'
+      },
+      {
+        num: '03',
+        name: 'Actividad 3',
+        file: 'assets/evidencias/unidad2-actividad3.pdf',
+        desc: 'Descripción de la actividad 3 de la Unidad 2.',
+        learned: 'Identifiqué cómo los servicios SaaS permiten utilizar aplicaciones mediante internet sin administrar directamente la infraestructura.'
+      },
+      {
+        num: '04',
+        name: 'Actividad 4',
+        file: 'assets/evidencias/unidad2-actividad4.pdf',
+        desc: 'Descripción de la actividad 4 de la Unidad 2.',
+        learned: 'Relacioné la infraestructura tecnológica con la toma de decisiones para seleccionar servicios adecuados en ambientes de nube.'
+      }
+    ]
+  },
+
+  3: {
+    activities: [
+      {
+        num: '01',
+        name: 'Proyecto Principal',
+        file: 'assets/evidencias/unidad3-proyecto-principal.pdf',
+        desc: 'Descripción del proyecto principal de la Unidad 3.',
+        learned: 'Logré comprender la importancia de administrar correctamente los recursos en la nube y de relacionar la teoría con una solución práctica.'
+      }
+    ]
+  },
+
+  4: {
+    activities: [
+      {
+        num: '4.1',
+        name: 'Modelado',
+        file: 'assets/evidencias/unidad4-actividad1.pdf',
+        desc: 'Desarrollo de modelos o esquemas relacionados con la aplicación de servicios en la nube.',
+        learned: 'Aprendí a representar de forma estructurada los elementos necesarios para comprender una solución tecnológica.'
+      },
+      {
+        num: '4.2',
+        name: 'Diagramación',
+        file: 'assets/evidencias/unidad4-actividad2.pdf',
+        desc: 'Elaboración de diagramas para representar procesos, arquitectura o funcionamiento de soluciones en la nube.',
+        learned: 'Comprendí que los diagramas ayudan a visualizar mejor los componentes de una solución y facilitan su explicación.'
+      },
+      {
+        num: '4.3',
+        name: 'Redacción',
+        file: 'assets/evidencias/unidad4-actividad3.pdf',
+        desc: 'Elaboración de documentos técnicos relacionados con los temas abordados durante la unidad.',
+        learned: 'Fortalecí mi capacidad para explicar conceptos técnicos de manera clara, ordenada y comprensible.'
+      },
+      {
+        num: '4.4',
+        name: 'Prototipado',
+        file: 'assets/evidencias/unidad4-actividad4.pdf',
+        desc: 'Diseño o planeación de una solución informática considerando servicios y herramientas en la nube.',
+        learned: 'Aprendí la importancia de planear una solución antes de implementarla, considerando sus funciones principales.'
+      },
+      {
+        num: '4.5',
+        name: 'Lógica',
+        file: 'assets/evidencias/unidad4-actividad5.pdf',
+        desc: 'Aplicación de razonamiento lógico para resolver problemas relacionados con el desarrollo de soluciones informáticas.',
+        learned: 'Desarrollé habilidades para analizar problemas y proponer soluciones ordenadas mediante estructuras lógicas.'
+      },
+      {
+        num: '4.6',
+        name: 'Colaboración',
+        file: 'assets/evidencias/unidad4-actividad6.pdf',
+        desc: 'Trabajo colaborativo para el desarrollo o análisis de actividades relacionadas con cómputo en la nube.',
+        learned: 'Reconocí la importancia de la comunicación y la colaboración para lograr mejores resultados en proyectos tecnológicos.'
+      },
+      {
+        num: '4.7',
+        name: 'Investigación',
+        file: 'assets/evidencias/unidad4-actividad7.pdf',
+        desc: 'Investigación de herramientas, plataformas o servicios relacionados con la nube.',
+        learned: 'Aprendí a buscar, comparar y seleccionar información relevante para comprender mejor las tecnologías disponibles.'
+      },
+      {
+        num: '4.8',
+        name: 'Exposición',
+        file: 'assets/evidencias/unidad4-actividad8.pdf',
+        desc: 'Presentación de resultados, avances o conceptos relacionados con la unidad.',
+        learned: 'Fortalecí mi habilidad para comunicar ideas técnicas de forma clara y estructurada frente a otros.'
+      },
+      {
+        num: '4.9',
+        name: 'Estructuración',
+        file: 'assets/evidencias/unidad4-actividad9.pdf',
+        desc: 'Organización de información o componentes para el desarrollo de una solución informática.',
+        learned: 'Comprendí que una buena estructura facilita el desarrollo, mantenimiento y comprensión de un proyecto.'
+      },
+      {
+        num: '4.10',
+        name: 'Síntesis',
+        file: 'assets/evidencias/unidad4-actividad10.pdf',
+        desc: 'Integración de los aprendizajes obtenidos durante la unidad mediante una actividad de cierre.',
+        learned: 'Logré sintetizar los conocimientos adquiridos y reconocer su aplicación dentro del contexto del cómputo en la nube.'
+      }
+    ]
+  },
+
+  5: {
+    activities: [
+      {
+        num: '01',
+        name: 'Investigación de Mercado',
+        file: 'assets/evidencias/unidad5-actividad1.pdf',
+        desc: 'Análisis de tendencias, necesidades o áreas de oportunidad relacionadas con soluciones basadas en la nube.',
+        learned: 'Aprendí a identificar oportunidades donde el cómputo en la nube puede aportar valor mediante soluciones tecnológicas.'
+      },
+      {
+        num: '02',
+        name: 'Diseño de Prototipos',
+        file: 'assets/evidencias/unidad5-actividad2.pdf',
+        desc: 'Diseño de una propuesta o prototipo considerando el uso de servicios y herramientas en la nube.',
+        learned: 'Comprendí la importancia de diseñar soluciones funcionales que respondan a necesidades reales de los usuarios.'
+      },
+      {
+        num: '03',
+        name: 'Gestión de Proyectos',
+        file: 'assets/evidencias/unidad5-actividad3.pdf',
+        desc: 'Planeación y organización de actividades para el desarrollo de una solución informática.',
+        learned: 'Fortalecí mi capacidad para organizar tareas, tiempos y recursos dentro de un proyecto tecnológico.'
+      },
+      {
+        num: '04',
+        name: 'Análisis de Big Data',
+        file: 'assets/evidencias/unidad5-actividad4.pdf',
+        desc: 'Revisión de conceptos relacionados con el análisis de grandes volúmenes de datos y su relación con la nube.',
+        learned: 'Aprendí que la nube facilita el almacenamiento, procesamiento y análisis de datos de forma escalable.'
+      },
+      {
+        num: '05',
+        name: 'Ética en IA',
+        file: 'assets/evidencias/unidad5-actividad5.pdf',
+        desc: 'Análisis de aspectos éticos relacionados con el uso de inteligencia artificial y tecnologías en la nube.',
+        learned: 'Comprendí la importancia de utilizar la tecnología de manera responsable, considerando seguridad, privacidad y ética.'
+      },
+      {
+        num: '06',
+        name: 'Estrategias UX',
+        file: 'assets/evidencias/unidad5-actividad6.pdf',
+        desc: 'Análisis de la experiencia del usuario dentro de soluciones informáticas apoyadas en servicios en la nube.',
+        learned: 'Reconocí que una solución tecnológica debe ser funcional, pero también clara, accesible y fácil de usar.'
+      },
+      {
+        num: '07',
+        name: 'Escritura Académica',
+        file: 'assets/evidencias/unidad5-actividad7.pdf',
+        desc: 'Redacción de contenido académico relacionado con los temas abordados durante la unidad.',
+        learned: 'Mejoré mi capacidad para redactar ideas técnicas con orden, coherencia y sustento académico.'
+      },
+      {
+        num: '08',
+        name: 'Testing de Software',
+        file: 'assets/evidencias/unidad5-actividad8.pdf',
+        desc: 'Revisión o aplicación de pruebas para verificar el funcionamiento de una solución informática.',
+        learned: 'Aprendí que las pruebas permiten detectar errores y mejorar la calidad de una aplicación antes de su entrega.'
+      },
+      {
+        num: '09',
+        name: 'Liderazgo Colaborativo',
+        file: 'assets/evidencias/unidad5-actividad9.pdf',
+        desc: 'Desarrollo de actividades en equipo para integrar conocimientos y avanzar en una solución tecnológica.',
+        learned: 'Comprendí que el liderazgo y la colaboración son fundamentales para alcanzar objetivos dentro de un proyecto.'
+      },
+      {
+        num: '10',
+        name: 'Sostenibilidad Digital',
+        file: 'assets/evidencias/unidad5-actividad10.pdf',
+        desc: 'Análisis de la relación entre tecnología, nube y uso responsable de recursos digitales.',
+        learned: 'Aprendí que las soluciones tecnológicas también deben considerar su impacto ambiental, social y operativo.'
+      }
+    ]
+  }
 };
 
-let activeUnit = 0, activeAct = 0;
+let activeUnit = 0;
+let activeAct = 0;
 
 function buildCards(){
-  for(let u=1;u<=5;u++){
-    const grid=document.getElementById('grid-u'+u);
-    units[u].activities.forEach((act,i)=>{
-      const col=UNIT_COLORS[u];
-      const card=document.createElement('div');
-      card.className='ev-card';
-      card.id=`card-u${u}-a${i}`;
-      card.innerHTML=`
+  for(let u = 1; u <= 5; u++){
+    const grid = document.getElementById('grid-u' + u);
+
+    if(!grid) continue;
+    if(!units[u] || !units[u].activities) continue;
+
+    grid.innerHTML = '';
+
+    units[u].activities.forEach((act, i) => {
+      const col = UNIT_COLORS[u];
+      const card = document.createElement('div');
+
+      card.className = 'ev-card';
+      card.id = `card-u${u}-a${i}`;
+
+      card.innerHTML = `
         <div class="ev-thumb" style="background:linear-gradient(135deg,${col.bg} 0%,#f5e0f0 100%)">
-          <div class="ev-ph" id="ph-u${u}-a${i}">
-            <div class="act-icon">${act.icon}</div>
-            <span>Clic para agregar evidencia</span>
+          ${getCardPreview(act, u, i)}
+          <div class="ev-overlay">
+            <div class="ev-ov-txt">Ver evidencia</div>
           </div>
-          <div class="ev-overlay"><div class="ev-ov-txt">👁 Ver evidencia</div></div>
         </div>
+
         <div class="ev-body">
-          <div class="ev-badge" style="background:${col.bg};color:${col.text}">Actividad ${act.num}</div>
+          <div class="ev-badge" style="background:${col.bg};color:${col.text}">
+            Actividad ${act.num}
+          </div>
+
           <div class="ev-title">${act.name}</div>
           <div class="ev-desc">${act.desc}</div>
-          <div class="ev-learned"><div class="ev-ll">¿Qué aprendí?</div><p>${act.learned}</p></div>
-        </div>`;
-      card.onclick=()=>openModal(u,i);
+
+          <div class="ev-learned">
+            <div class="ev-ll">¿Qué aprendí?</div>
+            <p>${act.learned}</p>
+          </div>
+        </div>
+      `;
+
+      card.onclick = () => openModal(u, i);
       grid.appendChild(card);
     });
   }
 }
 
-function buildIconPicker(){
-  const picker=document.getElementById('icon-picker');
-  ICONS.forEach(ic=>{
-    const btn=document.createElement('button');
-    btn.className='ip-btn';
-    btn.textContent=ic;
-    btn.title=ic;
-    btn.onclick=(e)=>{e.stopPropagation();selectIcon(ic,btn);};
-    picker.appendChild(btn);
-  });
+function getCardPreview(act, u, i){
+  const previewId = `preview-u${u}-a${i}`;
+
+  return `
+    <div class="file-preview-wrap" id="${previewId}">
+      <div class="file-fallback">
+        <div class="file-fallback-type">Evidencia</div>
+        <div class="file-fallback-title">${act.name}</div>
+        <div class="file-fallback-msg">Cargando vista previa...</div>
+      </div>
+    </div>
+  `;
 }
 
-function selectIcon(icon, btn){
-  document.querySelectorAll('.ip-btn').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected');
-  const u=activeUnit, i=activeAct;
-  units[u].activities[i].icon=icon;
-  const ph=document.getElementById(`ph-u${u}-a${i}`);
-  if(ph) ph.querySelector('.act-icon').textContent=icon;
-}
+function renderPreview(previewId, act){
+  const box = document.getElementById(previewId);
+  if(!box) return;
 
-function openModal(u,i){
-  activeUnit=u; activeAct=i;
-  const act=units[u].activities[i];
-  const col=UNIT_COLORS[u];
-  document.getElementById('m-badge').textContent=`Unidad ${u} · Actividad ${act.num}`;
-  document.getElementById('m-badge').style.cssText=`background:${col.bg};color:${col.text}`;
-  document.getElementById('m-title').textContent=act.name;
-  document.getElementById('m-desc').textContent=act.desc;
-  document.getElementById('m-learned').textContent=act.learned;
+  const file = act.file.toLowerCase();
 
-  // icon picker highlight
-  document.querySelectorAll('.ip-btn').forEach(b=>{
-    b.classList.toggle('selected', b.textContent===act.icon);
-  });
-
-  // media
-  const media=document.getElementById('m-media');
-  let stored='';
-  try{stored=localStorage.getItem(`pf-u${u}-a${i}`)||'';}catch(e){}
-  if(stored.startsWith('data:image')){
-    media.innerHTML=`<img src="${stored}" alt="Evidencia">`;
-  } else if(stored.startsWith('data:application/pdf')){
-    media.innerHTML=`<iframe src="${stored}"></iframe>`;
-  } else {
-    media.innerHTML=`<div class="no-file">
-      <div class="nf-icon">🌸</div>
-      <p>Agrega tu PDF o imagen para esta actividad</p>
-      <label class="upload-btn">📎 Seleccionar archivo
-        <input type="file" accept="image/*,.pdf" style="display:none" onchange="handleFile(event,${u},${i})">
-      </label>
-      <p style="margin-top:8px;font-size:.7rem;color:#bbb">Imágenes JPG, PNG o PDF</p>
-    </div>`;
+  if(
+    file.endsWith('.png') ||
+    file.endsWith('.jpg') ||
+    file.endsWith('.jpeg') ||
+    file.endsWith('.webp')
+  ){
+    box.innerHTML = `
+      <img 
+        class="file-preview"
+        src="${act.file}" 
+        alt="${act.name}"
+        onerror="showPreviewError('${previewId}', '${safeText(act.name)}')"
+      >
+    `;
+    return;
   }
 
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  if(file.endsWith('.pdf')){
+    box.innerHTML = `
+      <iframe 
+        class="file-preview"
+        src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+        title="${act.name}">
+      </iframe>
+    `;
+    return;
+  }
+
+  showPreviewError(previewId, act.name);
 }
 
-function handleFile(e,u,i){
-  const file=e.target.files[0];
-  if(!file)return;
-  const reader=new FileReader();
-  reader.onload=ev=>{
-    const d=ev.target.result;
-    try{localStorage.setItem(`pf-u${u}-a${i}`,d);}catch(err){}
-    const media=document.getElementById('m-media');
-    if(file.type.startsWith('image/')){
-      media.innerHTML=`<img src="${d}" alt="Evidencia">`;
-    } else {
-      media.innerHTML=`<iframe src="${d}"></iframe>`;
-    }
-    // update card thumb
-    const ph=document.getElementById(`ph-u${u}-a${i}`);
-    if(ph){
-      const thumb=ph.parentElement;
-      if(file.type.startsWith('image/')){
-        thumb.innerHTML=`<img src="${d}" alt="Evidencia"><div class="ev-overlay"><div class="ev-ov-txt">👁 Ver evidencia</div></div>`;
-      } else {
-        ph.innerHTML=`<div class="act-icon">📄</div><span>PDF cargado ✓</span>`;
+function showPreviewError(previewId, title){
+  const box = document.getElementById(previewId);
+  if(!box) return;
+
+  box.innerHTML = `
+    <div class="file-fallback">
+      <div class="file-fallback-type">Evidencia</div>
+      <div class="file-fallback-title">${title}</div>
+      <div class="file-fallback-msg">No se pudo cargar la vista previa</div>
+    </div>
+  `;
+}
+
+function safeText(text){
+  return String(text).replace(/'/g, "\\'");
+}
+
+async function checkEvidenceFiles(){
+  for(let u = 1; u <= 5; u++){
+    if(!units[u] || !units[u].activities) continue;
+
+    for(let i = 0; i < units[u].activities.length; i++){
+      const act = units[u].activities[i];
+      const previewId = `preview-u${u}-a${i}`;
+
+      if(!act.file){
+        showPreviewError(previewId, act.name);
+        continue;
+      }
+
+      try{
+        const response = await fetch(act.file, { method: 'HEAD' });
+
+        if(response.ok){
+          renderPreview(previewId, act);
+        }else{
+          showPreviewError(previewId, act.name);
+        }
+      }catch(error){
+        showPreviewError(previewId, act.name);
       }
     }
-  };
-  reader.readAsDataURL(file);
+  }
+}
+
+function getModalMedia(act){
+  if(!act.file){
+    return `
+      <div class="no-file">
+        <div class="nf-icon">Evidencia</div>
+        <p>No se ha agregado evidencia para esta actividad.</p>
+      </div>
+    `;
+  }
+
+  const file = act.file.toLowerCase();
+
+  if(
+    file.endsWith('.png') ||
+    file.endsWith('.jpg') ||
+    file.endsWith('.jpeg') ||
+    file.endsWith('.webp')
+  ){
+    return `<img src="${act.file}" alt="${act.name}">`;
+  }
+
+  if(file.endsWith('.pdf')){
+    return `<iframe src="${act.file}"></iframe>`;
+  }
+
+  return `
+    <div class="no-file">
+      <div class="nf-icon">Archivo</div>
+      <p>Archivo disponible.</p>
+      <a href="${act.file}" target="_blank" class="upload-btn">Abrir archivo</a>
+    </div>
+  `;
+}
+
+function openModal(u, i){
+  activeUnit = u;
+  activeAct = i;
+
+  const act = units[u].activities[i];
+  const col = UNIT_COLORS[u];
+
+  document.getElementById('m-badge').textContent = `Unidad ${u} · Actividad ${act.num}`;
+  document.getElementById('m-badge').style.cssText = `background:${col.bg};color:${col.text}`;
+
+  document.getElementById('m-title').textContent = act.name;
+  document.getElementById('m-desc').textContent = act.desc;
+  document.getElementById('m-learned').textContent = act.learned;
+
+  document.getElementById('m-media').innerHTML = getModalMedia(act);
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeBg(e){if(e.target===document.getElementById('modal'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-
-function showUnit(n){
-  document.querySelectorAll('.unit-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.utab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('unit-'+n).classList.add('active');
-  document.querySelectorAll('.utab')[n-1].classList.add('active');
+  document.body.style.overflow = '';
 }
 
-function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
-
-function loadStored(){
-  for(let u=1;u<=5;u++){
-    units[u].activities.forEach((act,i)=>{
-      let stored='';
-      try{stored=localStorage.getItem(`pf-u${u}-a${i}`)||'';}catch(e){}
-      if(!stored)return;
-      const ph=document.getElementById(`ph-u${u}-a${i}`);
-      if(!ph)return;
-      const thumb=ph.parentElement;
-      if(stored.startsWith('data:image')){
-        thumb.innerHTML=`<img src="${stored}" alt="Evidencia" style="width:100%;height:100%;object-fit:cover"><div class="ev-overlay"><div class="ev-ov-txt">👁 Ver</div></div>`;
-      } else if(stored.startsWith('data:application/pdf')){
-        ph.innerHTML=`<div class="act-icon">📄</div><span>PDF cargado ✓</span>`;
-      }
-    });
+function closeBg(e){
+  if(e.target === document.getElementById('modal')){
+    closeModal();
   }
 }
 
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    closeModal();
+  }
+});
 
-function changeIconImage(event, input){
-  const file = event.target.files[0];
-  if(!file) return;
+function showUnit(n){
+  document.querySelectorAll('.unit-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
 
-  const reader = new FileReader();
-  reader.onload = function(e){
-    const iconBox = input.closest('.ic-icon');
-    const img = iconBox.querySelector('.ic-img');
-    img.src = e.target.result;
-    iconBox.classList.add('has-image');
-  };
-  reader.readAsDataURL(file);
+  document.querySelectorAll('.utab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  document.getElementById('unit-' + n).classList.add('active');
+  document.querySelectorAll('.utab')[n - 1].classList.add('active');
 }
 
-buildCards();
-buildIconPicker();
-loadStored();
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildCards();
+  checkEvidenceFiles();
+});
 </script>
 </body>
 </html>
