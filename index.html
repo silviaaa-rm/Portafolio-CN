@@ -802,6 +802,49 @@ section{padding:80px 5%}
   }
 }
 
+@media(max-width:600px){
+  .desktop-pdf-preview,
+  .pdf-modal-frame{
+    display:none;
+  }
+
+  .mobile-pdf-card{
+    display:flex;
+  }
+
+  .modal-media{
+    background:#fff;
+    padding:22px 16px;
+    min-height:auto;
+    height:auto;
+  }
+
+  .pdf-modal-content{
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .pdf-open-btn{
+    display:inline-flex;
+    background:var(--rose-deep);
+    color:white;
+    padding:12px 24px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:800;
+  }
+
+  .modal-info{
+    background:white;
+    padding:16px;
+    border-top:1px solid var(--border);
+  }
+}
+
 /* INDICE */
 #indice{
   background:var(--white);
@@ -1878,22 +1921,22 @@ function getCardPreview(act, u, i){
   const file = act.file.toLowerCase();
 
   if(file.endsWith('.pdf')){
-    return `
-      <div class="file-preview-wrap" id="${previewId}">
-        <iframe 
-          class="file-preview desktop-pdf-preview"
-          src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
-          title="${act.name}">
-        </iframe>
+  return `
+    <div class="file-preview-wrap">
+      <iframe 
+        class="file-preview desktop-pdf-preview"
+        src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+        title="${act.name}">
+      </iframe>
 
-        <div class="mobile-pdf-card">
-          <div class="file-fallback-type">PDF</div>
-          <div class="file-fallback-title">${act.name}</div>
-          <div class="file-fallback-msg">Toca para ver evidencia</div>
-        </div>
+      <div class="mobile-pdf-card">
+        <div class="file-fallback-type">PDF</div>
+        <div class="file-fallback-title">${act.name}</div>
+        <div class="file-fallback-msg">Toca para abrir evidencia</div>
       </div>
-    `;
-  }
+    </div>
+  `;
+}
 
   if(
     file.endsWith('.png') ||
@@ -2002,14 +2045,21 @@ async function checkEvidenceFiles(){
 }
 
 function getModalMedia(act){
-  if(!act.file){
-    return `
-      <div class="no-file">
-        <div class="nf-icon">Evidencia</div>
-        <p>No se ha agregado evidencia para esta actividad.</p>
-      </div>
-    `;
-  }
+  if(file.endsWith('.pdf')){
+  return `
+    <div class="pdf-modal-content">
+      <iframe 
+        class="pdf-modal-frame"
+        src="${act.file}#toolbar=1&navpanes=0"
+        title="${act.name}">
+      </iframe>
+
+      <a class="pdf-open-btn" href="${act.file}" target="_blank">
+        Abrir PDF
+      </a>
+    </div>
+  `;
+}
 
   const file = act.file.toLowerCase();
 
