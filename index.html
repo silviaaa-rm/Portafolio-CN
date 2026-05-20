@@ -671,6 +671,137 @@ section{padding:80px 5%}
   color:var(--rose-dark);
 }
 
+.file-preview-wrap{
+  width:100%;
+  height:100%;
+  position:relative;
+  background:#fff7fb;
+  border:1px solid #f0c6d8;
+  box-shadow:0 14px 35px rgba(194,84,122,.25);
+  overflow:hidden;
+}
+
+.file-preview{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  background:white;
+  pointer-events:none;
+  display:block;
+}
+
+.mobile-pdf-card{
+  display:none;
+}
+
+.file-fallback,
+.mobile-pdf-card{
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.file-fallback{
+  display:flex;
+}
+
+.file-fallback-type{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  margin-bottom:8px;
+}
+
+.file-fallback-title{
+  font-size:.9rem;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.3;
+  max-width:260px;
+  margin-bottom:8px;
+}
+
+.file-fallback-msg{
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--rose-dark);
+}
+
+.pdf-modal-content{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  background:#1c0f1a;
+}
+
+.pdf-modal-frame{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  border:none;
+  background:white;
+}
+
+.pdf-open-btn{
+  display:none;
+  align-self:center;
+  margin:14px 0;
+  background:var(--rose-deep);
+  color:white;
+  padding:10px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:.85rem;
+  font-weight:700;
+}
+
+@media(max-width:600px){
+  .desktop-pdf-preview{
+    display:none;
+  }
+
+  .mobile-pdf-card{
+    display:flex;
+  }
+
+  .modal-box{
+    max-height:96vh;
+  }
+
+  .modal-body{
+    overflow-y:auto;
+  }
+
+  .modal-media{
+    min-height:auto;
+    max-height:none;
+    height:auto;
+    flex-shrink:0;
+  }
+
+  .pdf-modal-frame{
+    height:300px;
+    min-height:300px;
+  }
+
+  .pdf-open-btn{
+    display:inline-flex;
+  }
+
+  .modal-info{
+    background:white;
+    position:relative;
+    z-index:2;
+  }
+}
+
 /* INDICE */
 #indice{
   background:var(--white);
@@ -1732,12 +1863,57 @@ function buildCards(){
 function getCardPreview(act, u, i){
   const previewId = `preview-u${u}-a${i}`;
 
+  if(!act.file){
+    return `
+      <div class="file-preview-wrap">
+        <div class="file-fallback">
+          <div class="file-fallback-type">Evidencia</div>
+          <div class="file-fallback-title">${act.name}</div>
+          <div class="file-fallback-msg">No se ha agregado evidencia</div>
+        </div>
+      </div>
+    `;
+  }
+
+  const file = act.file.toLowerCase();
+
+  if(file.endsWith('.pdf')){
+    return `
+      <div class="file-preview-wrap" id="${previewId}">
+        <iframe 
+          class="file-preview desktop-pdf-preview"
+          src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+          title="${act.name}">
+        </iframe>
+
+        <div class="mobile-pdf-card">
+          <div class="file-fallback-type">PDF</div>
+          <div class="file-fallback-title">${act.name}</div>
+          <div class="file-fallback-msg">Toca para ver evidencia</div>
+        </div>
+      </div>
+    `;
+  }
+
+  if(
+    file.endsWith('.png') ||
+    file.endsWith('.jpg') ||
+    file.endsWith('.jpeg') ||
+    file.endsWith('.webp')
+  ){
+    return `
+      <div class="file-preview-wrap" id="${previewId}">
+        <img class="file-preview" src="${act.file}" alt="${act.name}">
+      </div>
+    `;
+  }
+
   return `
-    <div class="file-preview-wrap" id="${previewId}">
+    <div class="file-preview-wrap">
       <div class="file-fallback">
-        <div class="file-fallback-type">Evidencia</div>
+        <div class="file-fallback-type">Archivo</div>
         <div class="file-fallback-title">${act.name}</div>
-        <div class="file-fallback-msg">Cargando vista previa...</div>
+        <div class="file-fallback-msg">Toca para abrir evidencia</div>
       </div>
     </div>
   `;
@@ -1837,6 +2013,22 @@ function getModalMedia(act){
 
   const file = act.file.toLowerCase();
 
+  if(file.endsWith('.pdf')){
+    return `
+      <div class="pdf-modal-content">
+        <iframe 
+          class="pdf-modal-frame"
+          src="${act.file}#toolbar=1&navpanes=0"
+          title="${act.name}">
+        </iframe>
+
+        <a class="pdf-open-btn" href="${act.file}" target="_blank">
+          Abrir PDF
+        </a>
+      </div>
+    `;
+  }
+
   if(
     file.endsWith('.png') ||
     file.endsWith('.jpg') ||
@@ -1844,10 +2036,6 @@ function getModalMedia(act){
     file.endsWith('.webp')
   ){
     return `<img src="${act.file}" alt="${act.name}">`;
-  }
-
-  if(file.endsWith('.pdf')){
-    return `<iframe src="${act.file}"></iframe>`;
   }
 
   return `
