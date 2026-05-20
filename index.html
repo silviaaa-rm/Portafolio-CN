@@ -83,6 +83,51 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);backgrou
 .sem-bar .val{font-weight:600;font-size:.92rem}
 @media(max-width:800px){.hero-inner{grid-template-columns:1fr;gap:36px;padding-bottom:40px}.hero-vis{order:-1}}
 
+
+/* BOX */
+.logos-box{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  align-items:center;
+  justify-content:center;
+}
+
+.school-logo-card{
+  width:100%;
+  max-width:420px;
+  min-height:180px;
+  background:rgba(255,255,255,.85);
+  border:1px solid var(--border);
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(138,48,86,.12);
+}
+
+.school-logo-card img{
+  max-width:100%;
+  max-height:130px;
+  object-fit:contain;
+}
+
+@media(max-width:800px){
+  .logos-box{
+    order:-1;
+  }
+
+  .school-logo-card{
+    min-height:130px;
+    padding:20px;
+  }
+
+  .school-logo-card img{
+    max-height:95px;
+  }
+}
+
 /* SECTION */
 section{padding:80px 5%}
 .container{max-width:1100px;margin:0 auto}
@@ -248,9 +293,9 @@ footer span{color:var(--white)}
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-badge">✦ Academic Journey 2024</div>
-      <h1 class="hero-title">Portafolio de<br><em>Evidencias</em></h1>
-      <p class="hero-sub">Un recorrido por el aprendizaje, los logros y las reflexiones del semestre.</p>
+      <div class="hero-badge">TecNM - Campus Saltillo</div>
+      <h1 class="hero-title">Portafolio de Evidencias<br><em>Cómputo en la Nube</em></h1>
+      <p class="hero-sub">Recopilación de evidencias y avances académicos de la asignatura.</p>
       <div class="info-cards">
         <div class="info-card">
           <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
@@ -258,7 +303,7 @@ footer span{color:var(--white)}
             <span class="ic-emoji">🎓</span>
             <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
           </label>
-          <div style="flex:1"><div class="ic-label">Estudiante</div><div class="ic-val" contenteditable="true" data-ph="Tu nombre aquí">Tu nombre aquí</div></div>
+          <div style="flex:1"><div class="ic-label">Estudiante</div><div class="ic-val" contenteditable="true" data-ph="Tu nombre aquí">Silvia Guadalupe Ramos Mendoza</div></div>
         </div>
         <div class="info-card">
           <label class="ic-icon" style="background:var(--lilac)" title="Clic para cambiar imagen">
@@ -266,7 +311,7 @@ footer span{color:var(--white)}
             <span class="ic-emoji">👩‍🏫</span>
             <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
           </label>
-          <div style="flex:1"><div class="ic-label">Docente</div><div class="ic-val" contenteditable="true" data-ph="Nombre del docente">Nombre del docente</div></div>
+          <div style="flex:1"><div class="ic-label">Docente</div><div class="ic-val" contenteditable="true" data-ph="Nombre del docente">Ing. Miguel Salazar del Bosque</div></div>
         </div>
         <div class="info-card">
           <label class="ic-icon" style="background:var(--peach)" title="Clic para cambiar imagen">
@@ -274,7 +319,7 @@ footer span{color:var(--white)}
             <span class="ic-emoji">📅</span>
             <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
           </label>
-          <div style="flex:1"><div class="ic-label">Período</div><div class="ic-val" contenteditable="true" data-ph="Semestre Otoño 2024">Semestre Otoño 2024</div></div>
+          <div style="flex:1"><div class="ic-label">Semestre</div><div class="ic-val" contenteditable="true" data-ph="Semestre Otoño 2024">Enero - Junio 2026</div></div>
         </div>
         <div class="info-card">
           <label class="ic-icon" style="background:var(--rose)" title="Clic para cambiar imagen">
@@ -282,17 +327,18 @@ footer span{color:var(--white)}
             <span class="ic-emoji">📘</span>
             <input type="file" accept="image/*" onchange="changeIconImage(event, this)">
           </label>
-          <div style="flex:1"><div class="ic-label">Materia / Curso</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Nombre de la materia</div></div>
+          <div style="flex:1"><div class="ic-label">Asignatura</div><div class="ic-val" contenteditable="true" data-ph="Nombre de la materia">Cómputo en la Nube</div></div>
         </div>
       </div>
     </div>
-    <div class="hero-vis">
-      <div class="stat-row">
-        <div class="stat-box accent"><div class="stat-n">5</div><div class="stat-l">Unidades</div></div>
-        <div class="stat-box"><div class="stat-n" style="color:var(--rose-dark)">29</div><div class="stat-l">Actividades</div></div>
-        <div class="stat-box" style="grid-column:span 2"><div class="stat-n" style="color:var(--rose-dark)">100%</div><div class="stat-l">Dedicación</div></div>
+   <div class="hero-vis logos-box">
+      <div class="school-logo-card">
+        <img src="assets/img/tecnm.png" alt="Logo TecNM">
       </div>
-      <div class="sem-bar"><div><div class="lbl">Semestre</div><div class="val">Otoño 2024</div></div><span>🌸</span></div>
+
+      <div class="school-logo-card">
+        <img src="assets/img/tec-saltillo.png" alt="Logo TecNM Campus Saltillo">
+      </div>
     </div>
   </div>
 </section>
