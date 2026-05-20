@@ -802,66 +802,6 @@ section{padding:80px 5%}
   }
 }
 
-/* Evita que la vista previa tape el texto de la tarjeta */
-.ev-thumb{
-  height:210px;
-  min-height:210px;
-  max-height:210px;
-  overflow:hidden;
-  position:relative;
-  flex-shrink:0;
-}
-
-.file-preview-wrap{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-}
-
-.file-preview,
-.desktop-pdf-preview{
-  width:100%;
-  height:100%;
-  border:none;
-  display:block;
-  object-fit:cover;
-  pointer-events:none;
-}
-
-.ev-body{
-  position:relative;
-  z-index:2;
-  background:var(--white);
-}
-
-.ev-card{
-  overflow:hidden;
-}
-
-@media(max-width:600px){
-  .ev-thumb{
-    height:180px;
-    min-height:180px;
-    max-height:180px;
-  }
-
-  .desktop-pdf-preview{
-    display:none !important;
-  }
-
-  .mobile-pdf-card{
-    width:100%;
-    height:100%;
-    background:linear-gradient(135deg,#fff7fb 0%,#f9d6e0 100%);
-    display:flex !important;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:24px;
-  }
-}
-
 /* INDICE */
 #indice{
   background:var(--white);
@@ -931,57 +871,6 @@ section{padding:80px 5%}
   .index-grid{
     grid-template-columns:1fr;
   }
-}
-
-/* FIX: evita que el PDF se encime con el texto */
-.ev-card{
-  overflow:hidden;
-}
-
-.ev-thumb{
-  height:220px;
-  min-height:220px;
-  max-height:220px;
-  overflow:hidden;
-  position:relative;
-  display:block;
-  flex-shrink:0;
-}
-
-.file-preview-wrap{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  position:relative;
-}
-
-.file-preview,
-.desktop-pdf-preview{
-  width:100%;
-  height:100%;
-  border:none;
-  display:block;
-  background:white;
-  pointer-events:none;
-}
-
-/* Importante: evita que el iframe se desborde */
-.ev-thumb iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  max-height:100%;
-  border:none;
-}
-
-/* El texto siempre queda debajo del PDF */
-.ev-body{
-  position:relative;
-  z-index:5;
-  background:var(--white);
-  padding:18px;
 }
 
 /* MODAL */
@@ -1201,115 +1090,63 @@ section{padding:80px 5%}
     grid-template-columns:1fr;
   }
 }
-/* FIX DEFINITIVO: evita que el PDF se empalme con el texto */
-.ev-card{
-  overflow:hidden !important;
-  position:relative !important;
+
+/* PDF dentro del modal sin empalmarse */
+.modal-body{
+  display:flex;
+  flex-direction:column;
+  overflow-y:auto;
 }
 
-.ev-thumb{
-  height:220px !important;
-  min-height:220px !important;
-  max-height:220px !important;
-  aspect-ratio:auto !important;
-  overflow:hidden !important;
-  position:relative !important;
-  z-index:1 !important;
-  flex-shrink:0 !important;
-}
-
-.ev-thumb iframe,
-.ev-thumb .file-preview,
-.ev-thumb .desktop-pdf-preview,
-.ev-thumb .file-preview-wrap{
-  width:100% !important;
-  height:100% !important;
-  max-height:100% !important;
-  display:block !important;
-  border:none !important;
-  overflow:hidden !important;
-  position:absolute !important;
-  inset:0 !important;
-  z-index:1 !important;
-  clip-path:inset(0 0 0 0) !important;
-}
-
-.ev-body{
-  position:relative !important;
-  z-index:50 !important;
-  background:var(--white) !important;
-  padding:22px 18px 18px !important;
-  margin-top:0 !important;
-  transform:translateZ(0);
-}
-
-/* Ajuste del PDF dentro del modal */
 .modal-media{
   background:#1c0f1a;
-  padding:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:auto !important;
+  padding:16px;
+  display:block;
   height:auto !important;
+  min-height:auto !important;
   max-height:none !important;
+  flex-shrink:0;
 }
 
 .pdf-modal-content{
   width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  height:430px;
   background:#1c0f1a;
+  border-radius:12px;
+  overflow:hidden;
 }
 
 .pdf-modal-frame{
-  width:88% !important;
-  height:480px !important;
-  min-height:480px !important;
-  max-height:480px !important;
+  width:100%;
+  height:100%;
   border:none;
+  display:block;
   background:white;
-  border-radius:12px;
-  box-shadow:0 14px 40px rgba(194,84,122,.25);
 }
 
 .modal-info{
   background:white;
   position:relative;
-  z-index:5;
+  z-index:2;
   padding:20px 22px;
   border-top:1px solid var(--border);
+  flex-shrink:0;
 }
 
-/* En celular, mejor mostrar botón para abrir PDF */
+/* En celular más compacto */
 @media(max-width:600px){
-  .pdf-modal-frame{
-    display:none !important;
-  }
-
   .modal-media{
-    background:#fff;
-    padding:20px 16px;
+    padding:12px;
   }
 
   .pdf-modal-content{
-    background:#fff;
+    height:300px;
   }
 
-  .pdf-open-btn{
-    display:inline-flex !important;
-    background:var(--rose-deep);
-    color:white;
-    padding:12px 24px;
-    border-radius:14px;
-    text-decoration:none;
-    font-size:.9rem;
-    font-weight:800;
+  .modal-info{
+    padding:16px;
   }
 }
-
 
 /* FOOTER */
 footer{background:var(--rose-deep);color:rgba(255,255,255,.65);padding:26px 5%;text-align:center;font-size:.78rem}
@@ -2080,11 +1917,13 @@ function buildCards(){
   }
 }
 
-function getCardPreview(act){
+function getCardPreview(act, u, i){
+  const previewId = `preview-u${u}-a${i}`;
+
   if(!act.file){
     return `
       <div class="file-preview-wrap">
-        <div class="mobile-pdf-card">
+        <div class="file-fallback">
           <div class="file-fallback-type">Evidencia</div>
           <div class="file-fallback-title">${act.name}</div>
           <div class="file-fallback-msg">No se ha agregado evidencia</div>
@@ -2097,32 +1936,41 @@ function getCardPreview(act){
 
   if(file.endsWith('.pdf')){
     return `
-      <div class="file-preview-wrap">
+      <div class="file-preview-wrap" id="${previewId}">
         <iframe 
-  class="pdf-modal-frame"
-  src="${act.file}#toolbar=1&navpanes=0&zoom=page-fit"
-  title="${act.name}">
-</iframe>
+          class="file-preview desktop-pdf-preview"
+          src="${act.file}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+          title="${act.name}">
+        </iframe>
 
         <div class="mobile-pdf-card">
           <div class="file-fallback-type">PDF</div>
           <div class="file-fallback-title">${act.name}</div>
-          <a class="mobile-open-btn" href="${act.file}" target="_blank" onclick="event.stopPropagation();">
-            Abrir
-          </a>
+          <div class="file-fallback-msg">Toca para ver evidencia</div>
         </div>
+      </div>
+    `;
+  }
+
+  if(
+    file.endsWith('.png') ||
+    file.endsWith('.jpg') ||
+    file.endsWith('.jpeg') ||
+    file.endsWith('.webp')
+  ){
+    return `
+      <div class="file-preview-wrap" id="${previewId}">
+        <img class="file-preview" src="${act.file}" alt="${act.name}">
       </div>
     `;
   }
 
   return `
     <div class="file-preview-wrap">
-      <div class="mobile-pdf-card">
+      <div class="file-fallback">
         <div class="file-fallback-type">Archivo</div>
         <div class="file-fallback-title">${act.name}</div>
-        <a class="mobile-open-btn" href="${act.file}" target="_blank" onclick="event.stopPropagation();">
-          Abrir
-        </a>
+        <div class="file-fallback-msg">Toca para abrir evidencia</div>
       </div>
     </div>
   `;
@@ -2223,20 +2071,16 @@ function getModalMedia(act){
   const file = act.file.toLowerCase();
 
   if(file.endsWith('.pdf')){
-    return `
-      <div class="pdf-modal-content">
-        <iframe 
-          class="pdf-modal-frame"
-          src="${act.file}#toolbar=1&navpanes=0"
-          title="${act.name}">
-        </iframe>
-
-        <a class="pdf-open-btn" href="${act.file}" target="_blank">
-          Abrir PDF
-        </a>
-      </div>
-    `;
-  }
+  return `
+    <div class="pdf-modal-content">
+      <iframe 
+        class="pdf-modal-frame"
+        src="${act.file}#toolbar=1&navpanes=0"
+        title="${act.name}">
+      </iframe>
+    </div>
+  `;
+}
 
   if(
     file.endsWith('.png') ||
